@@ -5,12 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Friseur Imhof in Unterhaching – Ihr Salon für präzise Schnitte, natürliche Farbe und persönliche Beratung. Marita Imhof. Termine nach Vereinbarung: 089 / 611 26 83." />
   <meta name="theme-color" content="#b79b6c" />
+  <meta name="robots" content="index, follow" />
   <title>Friseur Imhof</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://www.friseur-imhof.de/" />
+  <link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "Friseur Imhof",
+      "image": "https://www.friseur-imhof.de/assets/imhof-logo.png",
+      "url": "https://www.friseur-imhof.de/",
+      "telephone": "+49 89 6112683",
+      "email": "info@friseur-imhof.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Goerdelerstraße 49",
+        "postalCode": "82008",
+        "addressLocality": "Unterhaching",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }]
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Direkt zum Inhalt</a>
@@ -21,9 +46,8 @@
 
       <a class="brand" href="#start" aria-label="Friseur Imhof – zurück nach oben">
         <span class="brand-logo-wrap" aria-hidden="true">
-          <img class="brand-logo-img" src="https://www.friseur-imhof.de/wp-content/uploads/imhof_logo.png"
-               alt="Friseur Imhof Logo" width="38" height="38"
-               onerror="this.closest('.brand-logo-wrap').classList.add('fallback')" />
+          <img class="brand-logo-img" src="assets/imhof-logo.png"
+               alt="" width="42" height="42" />
           <span class="brand-logo-fallback" aria-hidden="true">MI</span>
         </span>
         <span class="brand-text">
@@ -91,8 +115,8 @@
               width="1200"
               height="1600"
               loading="eager"
+              fetchpriority="high"
               decoding="async"
-              onerror="this.style.display='none';"
             />
           </div>
 
@@ -205,8 +229,10 @@
         <div class="ueber-photo-col">
           <div class="ueber-photo-frame">
             <img
-              src="https://www.friseur-imhof.de/wp-content/uploads/marita-imhof.jpg"
-              alt="Marita Imhof"
+              src="assets/marita-imhof.jpg"
+              alt="Friseurmeisterin Marita Imhof"
+              width="960"
+              height="960"
               loading="lazy"
               decoding="async"
               class="ueber-photo"
@@ -271,7 +297,7 @@
         </header>
 
         <div class="price-row">
-          <a class="price-card" href="https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Damen.pdf"
+          <a class="price-card" href="assets/preisliste-damen.pdf"
              target="_blank" rel="noopener noreferrer" aria-label="Preisliste Damen als PDF öffnen">
             <span class="price-label">Preisliste</span>
             <strong class="price-title">Damen</strong>
@@ -280,7 +306,7 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </span>
           </a>
-          <a class="price-card" href="https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Herren.pdf"
+          <a class="price-card" href="assets/preisliste-herren.pdf"
              target="_blank" rel="noopener noreferrer" aria-label="Preisliste Herren als PDF öffnen">
             <span class="price-label">Preisliste</span>
             <strong class="price-title">Herren</strong>
@@ -334,16 +360,17 @@
           </a>
         </div>
 
-        <div class="map-wrap" aria-label="Karte: Friseur Imhof Unterhaching">
-          <iframe
-            title="Google Maps: Friseur Imhof, Goerdelerstraße 49, Unterhaching"
-            src="https://www.google.com/maps?q=Goerdelerstr.%2049%2C%2082008%20Unterhaching&output=embed"
-            width="600" height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="map-wrap" data-map aria-label="Karte: Friseur Imhof Unterhaching">
+          <div class="map-consent" data-map-consent>
+            <div class="map-consent-inner">
+              <strong>Standort auf Google Maps</strong>
+              <p>Mit dem Laden der Karte stimmen Sie der Datenübertragung an Google zu.</p>
+              <button class="map-consent-button" type="button" data-map-load>Karte laden</button>
+            </div>
+          </div>
+          <noscript>
+            <p class="map-noscript">Für die eingebettete Karte ist JavaScript erforderlich. Nutzen Sie alternativ den Link „Route in Google Maps“.</p>
+          </noscript>
         </div>
 
       </div>
@@ -375,9 +402,8 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand-wrap">
-        <img class="footer-logo" src="https://www.friseur-imhof.de/wp-content/uploads/imhof_logo.png"
-             alt="Friseur Imhof" width="30" height="30"
-             onerror="this.style.display='none'" />
+        <img class="footer-logo" src="assets/imhof-logo.png"
+             alt="" width="30" height="30" loading="lazy" />
         <p class="footer-brand">Friseur Imhof · Marita Imhof · Goerdelerstr. 49 · 82008 Unterhaching</p>
       </div>
       <nav class="footer-links" aria-label="Footer-Navigation">
@@ -391,6 +417,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

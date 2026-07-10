@@ -1,85 +1,97 @@
 /* ============================================================
-   Friseur Imhof – Premium Salon Script
+   Friseur Imhof – UI-Verhalten
    ============================================================ */
 
-const CONFIG = {
+'use strict';
+
+const CONFIG = Object.freeze({
   scrolledThreshold: 16,
   activeNavOffset: 110,
   observerThreshold: 0.12,
-};
+  mobileBreakpoint: '(max-width: 760px)',
+});
 
-/* ----------------------------------------------------------
-   Elemente
----------------------------------------------------------- */
-const body      = document.body;
-const header    = document.querySelector('[data-header]');
-const nav       = document.querySelector('[data-nav]');
+const body = document.body;
+const header = document.querySelector('[data-header]');
+const nav = document.querySelector('[data-nav]');
 const navToggle = document.querySelector('[data-nav-toggle]');
+const mobileNavQuery = window.matchMedia(CONFIG.mobileBreakpoint);
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-/* ----------------------------------------------------------
-   Mobile Navigation
----------------------------------------------------------- */
+/* Mobile Navigation ------------------------------------------------ */
+function setNavInert(isInert) {
+  if (!nav) return;
+  if (isInert) nav.setAttribute('inert', '');
+  else nav.removeAttribute('inert');
+}
+
 function openNav() {
+  if (!nav || !navToggle) return;
   nav.classList.add('is-open');
   body.classList.add('nav-open');
+  setNavInert(false);
   navToggle.setAttribute('aria-expanded', 'true');
   navToggle.setAttribute('aria-label', 'Menü schließen');
 }
 
-function closeNav() {
+function closeNav({ restoreFocus = false } = {}) {
+  if (!nav || !navToggle) return;
   nav.classList.remove('is-open');
   body.classList.remove('nav-open');
   navToggle.setAttribute('aria-expanded', 'false');
   navToggle.setAttribute('aria-label', 'Menü öffnen');
+  setNavInert(mobileNavQuery.matches);
+  if (restoreFocus) navToggle.focus();
+}
+
+function syncNavToViewport() {
+  if (!nav || !navToggle) return;
+  if (mobileNavQuery.matches) {
+    if (!nav.classList.contains('is-open')) setNavInert(true);
+  } else {
+    closeNav();
+    setNavInert(false);
+  }
 }
 
 if (nav && navToggle) {
-
   navToggle.addEventListener('click', () => {
     nav.classList.contains('is-open') ? closeNav() : openNav();
   });
 
   nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeNav);
+    link.addEventListener('click', () => closeNav());
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-      closeNav();
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+      closeNav({ restoreFocus: true });
     }
   });
 
-  document.addEventListener('pointerdown', (e) => {
+  document.addEventListener('pointerdown', (event) => {
     if (
       nav.classList.contains('is-open') &&
-      !nav.contains(e.target) &&
-      !navToggle.contains(e.target)
+      !nav.contains(event.target) &&
+      !navToggle.contains(event.target)
     ) {
       closeNav();
     }
   });
 
+  mobileNavQuery.addEventListener('change', syncNavToViewport);
+  syncNavToViewport();
 }
 
-/* ----------------------------------------------------------
-   Header Scroll-Zustand
----------------------------------------------------------- */
-function updateHeader() {
-  if (!header) return;
-  header.classList.toggle('is-scrolled', window.scrollY > CONFIG.scrolledThreshold);
-}
-
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
-
-/* ----------------------------------------------------------
-   Aktiver Navigationspunkt
----------------------------------------------------------- */
+/* Header und aktive Sektion ---------------------------------------- */
 const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
-
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
+
+function updateHeader() {
+  header?.classList.toggle('is-scrolled', window.scrollY > CONFIG.scrolledThreshold);
+}
 
 function updateActiveLink() {
   if (!sections.length) return;
@@ -92,18 +104,28 @@ function updateActiveLink() {
   });
 
   navLinks.forEach((link) => {
-    const isActive = link.getAttribute('href') === `#${currentSection.id}`;
+    const isActive = link.hash === `#${currentSection.id}`;
     link.classList.toggle('is-active', isActive);
-    link.setAttribute('aria-current', isActive ? 'page' : 'false');
+    if (isActive) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
   });
 }
 
-updateActiveLink();
-window.addEventListener('scroll', updateActiveLink, { passive: true });
+let scrollFrame = 0;
+function handleScroll() {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(() => {
+    updateHeader();
+    updateActiveLink();
+    scrollFrame = 0;
+  });
+}
 
-/* ----------------------------------------------------------
-   Scroll Reveal
----------------------------------------------------------- */
+updateHeader();
+updateActiveLink();
+window.addEventListener('scroll', handleScroll, { passive: true });
+
+/* Scroll Reveal ---------------------------------------------------- */
 const animatedElements = document.querySelectorAll(`
   .service-card,
   .price-card,
@@ -114,82 +136,74 @@ const animatedElements = document.querySelectorAll(`
   .ueber-badge
 `);
 
-animatedElements.forEach((el) => el.classList.add('will-animate'));
+if (
+  !reducedMotionQuery.matches &&
+  'IntersectionObserver' in window
+) {
+  animatedElements.forEach((element) => element.classList.add('will-animate'));
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: CONFIG.observerThreshold }
-);
+      });
+    },
+    { threshold: CONFIG.observerThreshold }
+  );
 
-animatedElements.forEach((el) => observer.observe(el));
+  animatedElements.forEach((element) => observer.observe(element));
+}
 
-/* ----------------------------------------------------------
-   Smooth Tilt Hover (Desktop only)
----------------------------------------------------------- */
-if (!window.matchMedia('(hover: none)').matches) {
-
-  const hoverCards = document.querySelectorAll('.service-card, .price-card');
-
-  hoverCards.forEach((card) => {
-
-    card.addEventListener('pointermove', (e) => {
+/* Dezenter Karten-Tilt auf präzisen Zeigegeräten ------------------ */
+if (
+  !reducedMotionQuery.matches &&
+  window.matchMedia('(hover: hover) and (pointer: fine)').matches
+) {
+  document.querySelectorAll('.service-card, .price-card').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateY = ((x / rect.width) - 0.5) * 4;
-      const rotateX = ((y / rect.height) - 0.5) * -4;
-
-      card.style.transform = `
-        perspective(1000px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateY(-8px)
-      `;
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
     });
 
     card.addEventListener('pointerleave', () => {
       card.style.transform = '';
     });
-
   });
-
 }
 
-/* ----------------------------------------------------------
-   Telefonnummer formatieren (Non-breaking spaces)
----------------------------------------------------------- */
-document.querySelectorAll('a[href="tel:+49896112683"]').forEach((link) => {
-  if (link.textContent.trim().startsWith('089')) {
-    link.textContent = '089\u00A0/\u00A0611\u00A026\u00A083';
-  }
+/* Google Maps erst nach bewusster Freigabe laden ------------------ */
+const mapContainer = document.querySelector('[data-map]');
+const mapLoadButton = document.querySelector('[data-map-load]');
+
+mapLoadButton?.addEventListener('click', () => {
+  if (!mapContainer || mapContainer.querySelector('iframe')) return;
+
+  const iframe = document.createElement('iframe');
+  iframe.title = 'Google Maps: Friseur Imhof, Goerdelerstraße 49, Unterhaching';
+  iframe.src = 'https://www.google.com/maps?q=Goerdelerstr.%2049%2C%2082008%20Unterhaching&output=embed';
+  iframe.width = '600';
+  iframe.height = '450';
+  iframe.loading = 'lazy';
+  iframe.allowFullscreen = true;
+  iframe.referrerPolicy = 'no-referrer-when-downgrade';
+  mapContainer.querySelector('[data-map-consent]')?.remove();
+  mapContainer.append(iframe);
+  iframe.focus();
 });
 
-/* ----------------------------------------------------------
-   Reduced Motion
----------------------------------------------------------- */
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+/* Lokale Bild-Fallbacks -------------------------------------------- */
+document.querySelectorAll('.brand-logo-img').forEach((image) => {
+  const showFallback = () => image.closest('.brand-logo-wrap')?.classList.add('fallback');
+  image.addEventListener('error', showFallback);
+  if (image.complete && image.naturalWidth === 0) showFallback();
+});
 
-if (reducedMotion.matches) {
-  document.documentElement.classList.add('reduced-motion');
-}
-
-/* ----------------------------------------------------------
-   Hero Parallax – entfernt (kein Foto mehr im Hero-Bereich)
----------------------------------------------------------- */
-
-/* ----------------------------------------------------------
-   Logo Fallback (onerror handler backup)
----------------------------------------------------------- */
-document.querySelectorAll('.brand-logo-img').forEach((img) => {
-  img.addEventListener('error', () => {
-    const wrap = img.closest('.brand-logo-wrap');
-    if (wrap) wrap.classList.add('fallback');
-  });
+document.querySelectorAll('.hero-salon-img').forEach((image) => {
+  const showFallback = () => image.closest('.hero-image-frame')?.classList.add('is-missing');
+  image.addEventListener('error', showFallback);
+  if (image.complete && image.naturalWidth === 0) showFallback();
 });
