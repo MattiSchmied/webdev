@@ -79,3 +79,44 @@
     observer.observe(element);
   }
 })();
+
+(() => {
+  const card = document.querySelector             ('[data-map]');
+  if (!card) return;
+  const load = card.querySelector                   ('[data-map-load]');
+  const revoke = card.querySelector                   ('[data-map-revoke]');
+  const placeholder = card.querySelector             ('[data-map-placeholder]');
+  const host = card.querySelector             ('[data-map-frame]');
+  const status = card.querySelector             ('[data-map-status]');
+  if (!load || !revoke || !placeholder || !host || !status) return;
+  const source = new URL(card.dataset.mapSrc ?? '', location.href);
+  if (source.origin !== 'https://www.google.com' || source.pathname !== '/maps/embed') return;
+  load.hidden = false;
+  load.addEventListener('click', () => {
+    if (host.childElementCount) return;
+    // The iframe is created only after clicking the explicit consent button.
+    // Consent stays in memory for this page view; it is never persisted.
+    const frame = document.createElement('iframe');
+    frame.title = 'Google Maps – Goerdelerstraße 49, 82008 Unterhaching';
+    frame.referrerPolicy = 'no-referrer';
+    frame.allowFullscreen = true;
+    frame.addEventListener('load', () => {
+      if (frame.isConnected) status.textContent = 'Google Maps ist aktiviert. Alternativ können Sie die Anfahrt separat öffnen.';
+    }, { once: true });
+    frame.src = source.href;
+    host.replaceChildren(frame);
+    host.hidden = false;
+    placeholder.hidden = true;
+    revoke.hidden = false;
+    status.textContent = 'Google Maps wird geladen. Alternativ können Sie die Anfahrt separat öffnen.';
+    revoke.focus({ preventScroll: true });
+  });
+  revoke.addEventListener('click', () => {
+    host.replaceChildren();
+    host.hidden = true;
+    placeholder.hidden = false;
+    revoke.hidden = true;
+    status.textContent = 'Die Karte ist geschlossen. Erneutes Laden erfordert Ihre Zustimmung.';
+    load.focus({ preventScroll: true });
+  });
+})();

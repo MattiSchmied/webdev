@@ -1,4 +1,4 @@
-# Friseur Imhof v2.0.3 · Modern Premium
+# Friseur Imhof v2.1.0 · Modern Premium
 
 Die vollständige Website liegt direkt in diesem Ordner. index.html lässt sich ohne Installation im Browser öffnen; alle wesentlichen Inhalte und Links funktionieren auch ohne JavaScript.
 
@@ -22,7 +22,7 @@ research/research-pack.json enthält das abschließende ResearchPack. website-ca
 
 ## Aufbau und Pflege
 
-Keine Laufzeitabhängigkeiten, kein CMS, keine Datenbank, keine Cookies, keine Analytics und keine automatisch geladenen Drittanbieter. Telefon und E-Mail öffnen die jeweilige Anwendung; Google Maps wird ausschließlich nach Klick geöffnet. Manrope wird lokal ausgeliefert; dadurch entstehen keine externen Fontanfragen. Die frei lizenzierte Schrift stammt aus dem offiziellen Google-Fonts-Repository, die SIL Open Font License liegt unter assets/fonts/OFL.txt.
+Keine Laufzeitabhängigkeiten, kein CMS, keine Datenbank, keine Cookies, keine Analytics und keine automatisch geladenen Drittanbieter. Telefon und E-Mail öffnen die jeweilige Anwendung; Die Google-Maps-Karte wird ausschließlich nach Klick auf den ausdrücklich beschrifteten Zustimmungsbutton eingebunden. Die Einwilligung bleibt nur in der aktuellen Seitenansicht und ist widerrufbar. Alternativ öffnet der Anfahrtslink Google Maps separat. Manrope wird lokal ausgeliefert; dadurch entstehen keine externen Fontanfragen. Die frei lizenzierte Schrift stammt aus dem offiziellen Google-Fonts-Repository, die SIL Open Font License liegt unter assets/fonts/OFL.txt.
 
 Die Anwendung und der Build sind in TypeScript geschrieben. Mit Node.js 24:
 
@@ -51,3 +51,11 @@ Impressum: Name, Adresse, Telefon, E-Mail und Berufsbezeichnung sind aus der off
 Die Website wurde lokal geprüft und wird als v2 über den GitHub-Pages-Workflow dieses Repositorys veröffentlicht. Die ursprüngliche Unternehmenswebsite wird dadurch nicht verändert.
 
 Original-Logo (assets/imhof-logo.png) und Original-Porträt (assets/marita-imhof.jpg) wurden zusätzlich von der offiziellen Unternehmenswebsite heruntergeladen und unverändert in Kopfbereich, Fußbereich und Inhaberinnen-Abschnitt eingebunden. Dateinachweise stehen in research/design-assets.json.
+
+## Navigation, Vertrauen und Karte · v2.1.0
+
+Die Kopfzeile übernimmt die Pillenform der bestehenden mobilen Terminleiste; die Terminleiste selbst bleibt unverändert. Belegte Vertrauenselemente betonen Meisterqualifikation seit 1984, persönliche Betreuung und öffentlich einsehbare Preise. Recherchequellen werden unter research/trust-sources.json dokumentiert.
+
+Die Kartenadresse stammt aus dem Google-Maps-Einbettungsdialog für Goerdelerstraße 49, 82008 Unterhaching. Im ausgelieferten HTML existiert kein iframe. Er wird erst nach der ausdrücklichen Zustimmung erzeugt; es gibt weder automatische Kartenanfragen noch gespeicherte Einwilligungen. Datenschutztext und Content Security Policy sind entsprechend angepasst.
+
+Yelp: 5,0 von 5 bei einer empfohlenen Bewertung, abgerufen am 05.10.2026. Der verlinkte Auszug stammt von Qype User (MarioA…) vom 13.06.2013. Quelle, Anzahl und Datum bleiben sichtbar; es wird keine Google-Sternebewertung behauptet. Die Sterne werden lokal dargestellt, ohne ein externes Bewertungs-Widget zu laden.

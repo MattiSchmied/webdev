@@ -40,5 +40,5 @@ const server = createServer(async (request, response) => {
     response.end(request.method === 'HEAD' ? undefined : await readFile(resolve(publicRoot, '404.html')));
   }
 });
-server.listen(port, '127.0.0.1', () => console.log('Friseur Imhof v2.0.0: http://127.0.0.1:' + port));
+server.listen(port, '127.0.0.1', () => console.log('Friseur Imhof v2.1.0: http://127.0.0.1:' + port));
 server.on('error', error => { console.error(error.message); process.exitCode = 1; });

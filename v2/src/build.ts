@@ -157,7 +157,7 @@ for (const target of [root, dist]) {
   writeFileSync(resolve(target, 'robots.txt'), 'User-agent: *\nAllow: ' + siteBasePath + '\nDisallow: ' + siteBasePath + 'research/\nDisallow: ' + siteBasePath + 'src/\nDisallow: ' + siteBasePath + 'checks/\nSitemap: ' + siteURL + 'sitemap.xml\n');
   writeFileSync(resolve(target, '.nojekyll'), '');
 }
-const csp = "default-src 'self'; script-src 'self' " + hashes.join(' ') + "; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'";
+const csp = "default-src 'self'; script-src 'self' " + hashes.join(' ') + "; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'";
 const security = {
   'Content-Security-Policy': csp,
   'X-Content-Type-Options': 'nosniff',

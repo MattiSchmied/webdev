@@ -1,0 +1,34 @@
+{
+  "reviewedAt": "2026-10-05",
+  "business": "Friseur Imhof, Marita Imhof, Goerdelerstr. 49, 82008 Unterhaching",
+  "designResearch": [{"url":"https://www.nngroup.com/articles/trustworthy-design/","application":"Consistent visual design, transparent prices, real identity and links to independent sources."}],
+  "confirmedFacts": [
+    {"claim":"Friseurmeisterin seit 1984","source":"https://www.friseur-imhof.de/"},
+    {"claim":"Persönliche Betreuung durch Marita Imhof","source":"https://www.friseur-imhof.de/"},
+    {"claim":"Einzelpreise und Original-PDFs einsehbar","source":"https://www.friseur-imhof.de/preise/"}
+  ],
+  "rating": {
+    "provider":"Yelp",
+    "url":"https://www.yelp.de/biz/friseur-imhof-unterhaching",
+    "score":5.0,
+    "scale":5,
+    "recommendedReviewCount":1,
+    "identityCheckedBy":["Goerdelerstr. 49, 82008 Unterhaching","089 6112683","friseur-imhof.de"],
+    "method":"Visible Yelp business page, German review selected through the public language control.",
+    "review": {
+      "publicAuthor":"Qype User (MarioA…)",
+      "publishedAt":"2013-06-13",
+      "stars":5,
+      "url":"https://www.yelp.de/biz/friseur-imhof-unterhaching?hrid=2nPSKtKnHh14LZ11cfDxvg",
+      "excerpt":"In heimischen Umfeld wird man zu Gast bei Frau Imhof höchst professionell, sehr freundlich und zu vollster Zufriedenheit beraten und bedient.",
+      "excerptWords":21
+    },
+    "displayPolicy":"Provider, actual count and retrieval date shown. Review date retained. No Google rating, invented reviews or review rich-result markup."
+  },
+  "map": {
+    "source":"Google Maps public Share → Embed a map dialog for Goerdelerstraße 49, 82008 Unterhaching",
+    "help":"https://support.google.com/maps/answer/7101463?hl=de",
+    "privacy":"https://policies.google.com/privacy?hl=de",
+    "consent":"Explicit consent button; iframe created only after that click, removed on withdrawal; no persistent consent storage."
+  }
+}
