@@ -42,7 +42,7 @@
   padding: 12px 18px;
   gap: 24px;
   border: 1px solid #D4DCD3B3;
-  border-radius: 18px;
+  border-radius: 30px;
   background: #F6F7F3;
   backdrop-filter: none;
   box-shadow: 0 4px 18px #15191606;
@@ -80,7 +80,7 @@
     width: calc(100% - 32px);
     min-height: 66px;
     padding: 10px 12px;
-    border-radius: 20px;
+    border-radius: 28px;
   }
   .menu-toggle {
     gap: 13px;
@@ -121,7 +121,7 @@
     overscroll-behavior: contain;
     scrollbar-width: thin;
     border: 1px solid #D4DCD3;
-    border-radius: 20px;
+    border-radius: 28px;
     background: #F6F7F3;
     backdrop-filter: none;
     box-shadow: 0 12px 30px #15191612;
