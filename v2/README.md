@@ -1,4 +1,4 @@
-# Friseur Imhof v2.0.0 · Modern Premium
+# Friseur Imhof v2.0.2 · Modern Premium
 
 Die vollständige Website liegt direkt in diesem Ordner. index.html lässt sich ohne Installation im Browser öffnen; alle wesentlichen Inhalte und Links funktionieren auch ohne JavaScript.
 
