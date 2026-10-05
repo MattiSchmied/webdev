@@ -1,0 +1,53 @@
+name: Deploy Imhof v2 to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build website
+        working-directory: v2
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/
+        run: node src/build.ts
+      - name: Check pages, prices and original PDFs
+        working-directory: v2
+        run: node src/check.ts
+      - name: Upload public website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: v2/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4

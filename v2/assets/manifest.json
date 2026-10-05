@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "3864ec23-f749-4665-87b6-0626dbd88d57",
+      "file": "assets/documents/preisliste-damen.pdf",
+      "checksum": "f2d1e135fdc2468cfe6119cb4760453ebc05e62dbecc06172285f0b6c68f1c99",
+      "managedAssetId": null
+    },
+    {
+      "id": "e710a8a3-166c-4675-b7c1-503645f1644f",
+      "file": "assets/documents/preisliste-herren.pdf",
+      "checksum": "a2d2ee34c517b765379852e5a3daa18c68aa82f7fb097a29f091241c2f929d6b",
+      "managedAssetId": null
+    }
+  ]
+}

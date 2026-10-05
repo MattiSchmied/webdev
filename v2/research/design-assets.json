@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "direction": "Contemporary premium hair editorial; Manrope typography; off-white, charcoal and muted sage; restrained motion and generous spacing.",
+  "image": {
+    "file": "assets/hair-editorial.png",
+    "origin": "Built-in image_gen tool",
+    "classification": "AI-generated decorative hairstyle inspiration, fictional adult subject",
+    "depictsRealBusiness": false,
+    "displayLabel": "KI-generierte Stilillustration",
+    "prompt": "Use case: photorealistic-natural. Asset type: portrait website hero for a highly contemporary German hair salon website. Primary request: premium editorial beauty photograph showcasing an elegant short sculpted dark brunette bob haircut. Subject: fictional adult woman around 35, candid relaxed confidence, looking sideways in three-quarter profile, wearing a simple black high-neck top, natural realistic skin, no jewellery. Backdrop: minimal pale cool grey studio. Composition: vertical 4:5, tightly framed from upper chest to a little above hair, head centred in upper half, hair silhouette fully in frame, expressive clean geometry. Lighting: directional soft daylight with gentle shadow, subtly desaturated editorial photography. Palette: charcoal hair, soft skin, cool grey. Sharp realistic hair texture and sophisticated natural styling. No text, logos, salon interior, scissors, watermark or UI. This is a fictional hairstyle inspiration image, not a real proprietor or customer."
+  },
+  "font": {
+    "family": "Manrope",
+    "localFile": "assets/fonts/manrope-variable.ttf",
+    "source": "https://github.com/google/fonts/tree/main/ofl/manrope",
+    "license": "SIL Open Font License 1.1",
+    "licenseFile": "assets/fonts/OFL.txt",
+    "delivery": "Self-hosted; no third-party browser request"
+  },
+  "originalAssets": [
+    {
+      "file": "assets/imhof-logo.png",
+      "checksum": "9dc14e800520616a3cb25e79318d9defda1473f0a0b4d39d51d6609dc0181e73",
+      "sourceUrl": "https://www.friseur-imhof.de/wp-content/uploads/imhof_logo.png",
+      "kind": "original_business_logo",
+      "altered": false
+    },
+    {
+      "file": "assets/marita-imhof.jpg",
+      "checksum": "6240c5e64a0dcd82858aaa562d9f7fabbe99bf57d4acb706c9c08a8b99b6d4b2",
+      "sourceUrl": "https://www.friseur-imhof.de/wp-content/uploads/marita-imhof.jpg",
+      "kind": "original_owner_portrait",
+      "altered": false
+    }
+  ]
+}

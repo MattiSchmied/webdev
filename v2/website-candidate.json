@@ -1,0 +1,1067 @@
+{
+  "research": {
+    "schemaVersion": 1,
+    "sourceSnapshotHash": "74bcb64d48fb14990d9fcbdbae1d64082bfd88accddb2a8c79625f19641402c4",
+    "packageSelection": {
+      "basePackage": "growth",
+      "modules": {
+        "team": false
+      }
+    },
+    "identity": {
+      "companyName": "Friseur Imhof, Marita Imhof",
+      "industry": "Friseursalon",
+      "location": "Unterhaching"
+    },
+    "businessFacts": [
+      {
+        "id": "business_name",
+        "category": "name",
+        "value": "Friseur Imhof; Inhaberin Marita Imhof",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "industry",
+        "category": "industry",
+        "value": "Friseursalon",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "location",
+        "category": "location",
+        "value": "82008 Unterhaching",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "street",
+        "category": "street",
+        "value": "Goerdelerstr. 49",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "postal_code",
+        "category": "postalCode",
+        "value": "82008",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "city",
+        "category": "city",
+        "value": "Unterhaching",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "phone",
+        "category": "phone",
+        "value": "089 / 611 26 83",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "email",
+        "category": "email",
+        "value": "info@friseur-imhof.de",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "opening_hours",
+        "category": "openingHours",
+        "value": "[{\"day\":\"mon\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"tue\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"wed\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"thu\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"fri\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]}]",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "master_since_1984",
+        "category": "credential",
+        "value": "Marita Imhof ist seit 1984 Friseurmeisterin.",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "individual_consultation",
+        "category": "benefit",
+        "value": "Persönliche Beratung orientiert sich an den Wünschen und Vorstellungen der Kundinnen und Kunden.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "home_visits",
+        "category": "benefit",
+        "value": "Hausbesuche sind nach Absprache möglich.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "occasion_service",
+        "category": "benefit",
+        "value": "Für Hochzeit und Kommunion wird ein Rundum-Paket angeboten.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "short_notice",
+        "category": "benefit",
+        "value": "Termine können kurzfristig vereinbart werden.",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "house_visit_travel",
+        "category": "other",
+        "value": "Hausbesuche auf Anfrage; Anfahrt 10,50 €. Die Friseurleistung ist nicht in diesem Anfahrtbetrag enthalten.",
+        "sourceIds": [
+          "official_prices",
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      }
+    ],
+    "services": [
+      {
+        "id": "haircut",
+        "title": "Haarschnitt",
+        "description": "Individuelle Empfehlungen zu einem Schnitt, der zu den persönlichen Wünschen passt.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "style_consultation",
+        "title": "Persönliche Beratung",
+        "description": "Beratung zu Schnitt, Farbe und typgerechten Empfehlungen.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "care_recommendation",
+        "title": "Haarpflege und Styling",
+        "description": "Empfehlungen zu Haarpflege- und Stylingprodukten sowie kosmetischen Fragen.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "home_visit",
+        "title": "Hausbesuch",
+        "description": "Ein Termin zuhause kann nach Absprache vereinbart werden.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "occasion_styling",
+        "title": "Hochzeit und Kommunion",
+        "description": "Ein Rundum-Paket für den besonderen Anlass wird persönlich abgestimmt.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "color",
+        "title": "Farbe und Tönungen",
+        "description": "Färben, Tönungen und Strähnen sind in der Damenpreisliste aufgeführt.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "perm",
+        "title": "Dauerwelle",
+        "description": "Dauerwellen mit Packung, Schneiden, Haarfestiger und Föhnen/Legen.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "beard",
+        "title": "Bartpflege",
+        "description": "Bart schneiden, Nassrasur und Schnurrbart schneiden.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "cosmetics",
+        "title": "Augenbrauen und Wimpern",
+        "description": "Augenbrauen zupfen und färben sowie Wimpern färben.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "children",
+        "title": "Kinderhaarschnitte",
+        "description": "Die Herrenpreisliste enthält Kinderpreise für Mädchen und Jungen von 0 bis 15 Jahren.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "seniors",
+        "title": "Seniorenhaarschnitt",
+        "description": "Die Herrenpreisliste enthält eigene Haarschnittpreise für Senioren ab 65 Jahren.",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      }
+    ],
+    "jobs": [],
+    "pricing": [
+      {
+        "id": "prices_damen",
+        "heading": "Preisliste Damen",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "status": "confirmed",
+        "items": [
+          {
+            "id": "damen_schnitt_1",
+            "title": "Damenhaarschnitt · Kurzes Haar",
+            "description": "Waschen, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "52,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_schnitt_2",
+            "title": "Damenhaarschnitt · Mittellanges Haar",
+            "description": "Waschen, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "60,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_schnitt_3",
+            "title": "Damenhaarschnitt · Langes Haar",
+            "description": "Waschen, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "68,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_foehnen_1",
+            "title": "Föhnen/Legen · Kurzes Haar",
+            "description": "Waschen, Haarfestiger, Föhnen/Legen",
+            "priceText": "28,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_foehnen_2",
+            "title": "Föhnen/Legen · Mittellanges Haar",
+            "description": "Waschen, Haarfestiger, Föhnen/Legen",
+            "priceText": "34,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_foehnen_3",
+            "title": "Föhnen/Legen · Langes Haar",
+            "description": "Waschen, Haarfestiger, Föhnen/Legen",
+            "priceText": "36,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_dauerwelle_1",
+            "title": "Dauerwelle · Kurzes Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "106,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_dauerwelle_2",
+            "title": "Dauerwelle · Mittellanges Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "116,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_dauerwelle_3",
+            "title": "Dauerwelle · Langes Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "125,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_straehnen_1",
+            "title": "Strähnen · Kurzes Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "106,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_straehnen_2",
+            "title": "Strähnen · Mittellanges Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "116,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_straehnen_3",
+            "title": "Strähnen · Langes Haar",
+            "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "125,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_toenungen_1",
+            "title": "Tönungen · Kurzes Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "86,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_toenungen_2",
+            "title": "Tönungen · Mittellanges Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "95,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_toenungen_3",
+            "title": "Tönungen · Langes Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "101,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_faerben_1",
+            "title": "Färben · Kurzes Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "92,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_faerben_2",
+            "title": "Färben · Mittellanges Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "104,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_faerben_3",
+            "title": "Färben · Langes Haar",
+            "description": "Schneiden, Haarfestiger, Föhnen/Legen",
+            "priceText": "113,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_haarpflege_1",
+            "title": "Haarpackung · Für kurzes Haar",
+            "description": "Pflege für Ihr Haar",
+            "priceText": "7,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_haarpflege_2",
+            "title": "Haarpackung · Für mittellanges Haar",
+            "description": "Pflege für Ihr Haar",
+            "priceText": "10,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_haarpflege_3",
+            "title": "Haarpackung · Für langes Haar",
+            "description": "Pflege für Ihr Haar",
+            "priceText": "10,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_kosmetik_1",
+            "title": "Kosmetische Behandlung · Augenbrauen zupfen",
+            "description": "Augenbrauen und Wimpern",
+            "priceText": "12,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_kosmetik_2",
+            "title": "Kosmetische Behandlung · Augenbrauen färben",
+            "description": "Augenbrauen und Wimpern",
+            "priceText": "12,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_kosmetik_3",
+            "title": "Kosmetische Behandlung · Wimpern färben",
+            "description": "Augenbrauen und Wimpern",
+            "priceText": "16,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "damen_hausbesuche_1",
+            "title": "Hausbesuche · Anfahrt",
+            "description": "Auf Anfrage; der Betrag gilt für die Anfahrt.",
+            "priceText": "10,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen. Hausbesuche auf Anfrage. Der ausgewiesene Betrag ist die Anfahrt, nicht die Friseurleistung."
+          }
+        ]
+      },
+      {
+        "id": "prices_herren",
+        "heading": "Preisliste Herren, Senioren und Kinder",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "status": "confirmed",
+        "items": [
+          {
+            "id": "herren_schnitt_1",
+            "title": "Herrenhaarschnitt · Trockenhaarschnitt: Schneiden, Föhnen",
+            "description": "Schnitt und Pflege",
+            "priceText": "24,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_schnitt_2",
+            "title": "Herrenhaarschnitt · Nasshaarschnitt: Waschen, Schneiden, Föhnen",
+            "description": "Schnitt und Pflege",
+            "priceText": "29,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_schnitt_3",
+            "title": "Herrenhaarschnitt · Maschinenhaarschnitt: Schneiden, Föhnen",
+            "description": "Schnitt und Pflege",
+            "priceText": "20,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_schnitt_4",
+            "title": "Herrenhaarschnitt · Maschinenhaarschnitt: Waschen, Schneiden, Föhnen",
+            "description": "Schnitt und Pflege",
+            "priceText": "24,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_schnitt_5",
+            "title": "Herrenhaarschnitt · Haarwasser mit Kopfmassage",
+            "description": "Schnitt und Pflege",
+            "priceText": "9,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_senioren_1",
+            "title": "Seniorenhaarschnitt ab 65 · Trockenhaarschnitt: Schneiden, Föhnen",
+            "description": "Preise für Senioren ab 65 Jahren",
+            "priceText": "18,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_senioren_2",
+            "title": "Seniorenhaarschnitt ab 65 · Nasshaarschnitt: Waschen, Schneiden, Föhnen",
+            "description": "Preise für Senioren ab 65 Jahren",
+            "priceText": "23,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_senioren_3",
+            "title": "Seniorenhaarschnitt ab 65 · Kranzhaarschnitt: Schneiden, Föhnen",
+            "description": "Preise für Senioren ab 65 Jahren",
+            "priceText": "17,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_senioren_4",
+            "title": "Seniorenhaarschnitt ab 65 · Kranzhaarschnitt: Waschen, Schneiden, Föhnen",
+            "description": "Preise für Senioren ab 65 Jahren",
+            "priceText": "20,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_senioren_5",
+            "title": "Seniorenhaarschnitt ab 65 · Haarwasser mit Kopfmassage",
+            "description": "Preise für Senioren ab 65 Jahren",
+            "priceText": "9,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_bartpflege_1",
+            "title": "Bartpflege · Bart schneiden",
+            "description": "Schneiden und Rasieren",
+            "priceText": "17,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_bartpflege_2",
+            "title": "Bartpflege · Bartrasur nass",
+            "description": "Schneiden und Rasieren",
+            "priceText": "23,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_bartpflege_3",
+            "title": "Bartpflege · Schnurrbart schneiden",
+            "description": "Schneiden und Rasieren",
+            "priceText": "11,00 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_1",
+            "title": "Prinzessinnen · 0–5 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "18,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_2",
+            "title": "Prinzessinnen · 0–5 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "21,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_3",
+            "title": "Prinzessinnen · 6–10 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "22,00 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_4",
+            "title": "Prinzessinnen · 6–10 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "24,00 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_5",
+            "title": "Prinzessinnen · 11–15 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "27,00 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_prinzessinnen_6",
+            "title": "Prinzessinnen · 11–15 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Mädchen",
+            "priceText": "34,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Damen. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_1",
+            "title": "Lausbuam · 0–5 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "18,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_2",
+            "title": "Lausbuam · 0–5 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "21,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_3",
+            "title": "Lausbuam · 6–10 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "20,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_4",
+            "title": "Lausbuam · 6–10 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "24,00 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_5",
+            "title": "Lausbuam · 11–15 Jahre: Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "21,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_lausbuam_6",
+            "title": "Lausbuam · 11–15 Jahre: Waschen, Schneiden, Föhnen",
+            "description": "Kinderpreise für Jungen",
+            "priceText": "24,50 €",
+            "notes": "Ab 16 Jahren gilt die Preisliste Herren. Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen."
+          },
+          {
+            "id": "herren_hausbesuche_1",
+            "title": "Hausbesuche · Anfahrt",
+            "description": "Auf Anfrage; der Betrag gilt für die Anfahrt.",
+            "priceText": "10,50 €",
+            "notes": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern. Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen. Hausbesuche auf Anfrage. Der ausgewiesene Betrag ist die Anfahrt, nicht die Friseurleistung."
+          }
+        ]
+      }
+    ],
+    "bookingAndContactPaths": [
+      {
+        "id": "phone_main",
+        "type": "phone",
+        "value": "089 / 611 26 83",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "email_main",
+        "type": "email",
+        "value": "info@friseur-imhof.de",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "contact_page",
+        "type": "contact",
+        "value": "https://www.friseur-imhof.de/kontakt/",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "directions",
+        "type": "contact",
+        "value": "https://www.google.com/maps/place/Friseur+Imhof/@48.0618,11.6218813,17z/data=!3m1!4b1!4m5!3m4!1s0x479de0a79de2c25d:0xbbb01e03c6d2c044!8m2!3d48.0618!4d11.62407",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      }
+    ],
+    "reviewSignals": [],
+    "assets": [
+      {
+        "id": "3864ec23-f749-4665-87b6-0626dbd88d57",
+        "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Damen.pdf",
+        "originPage": "https://www.friseur-imhof.de/preise/",
+        "sourceId": "official_prices",
+        "mimeType": "application/pdf",
+        "width": null,
+        "height": null,
+        "alt": "Original-Preisliste Damen",
+        "context": "Offizielle PDF-Preisliste, lokal unverändert gespeichert; Preise visuell mit dem gerenderten Original abgeglichen.",
+        "category": "priceList",
+        "confidence": 1,
+        "rights": "official_business_source",
+        "discoveredAt": "2026-10-05T16:16:04.050Z",
+        "checksum": "f2d1e135fdc2468cfe6119cb4760453ebc05e62dbecc06172285f0b6c68f1c99",
+        "managedAssetId": null
+      },
+      {
+        "id": "e710a8a3-166c-4675-b7c1-503645f1644f",
+        "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Herren.pdf",
+        "originPage": "https://www.friseur-imhof.de/preise/",
+        "sourceId": "official_prices",
+        "mimeType": "application/pdf",
+        "width": null,
+        "height": null,
+        "alt": "Original-Preisliste Herren",
+        "context": "Offizielle PDF-Preisliste, lokal unverändert gespeichert; Preise visuell mit dem gerenderten Original abgeglichen.",
+        "category": "priceList",
+        "confidence": 1,
+        "rights": "official_business_source",
+        "discoveredAt": "2026-10-05T16:16:04.220Z",
+        "checksum": "a2d2ee34c517b765379852e5a3daa18c68aa82f7fb097a29f091241c2f929d6b",
+        "managedAssetId": null
+      }
+    ],
+    "sources": [
+      {
+        "id": "known_identity",
+        "type": "known_identity",
+        "url": null,
+        "title": "test",
+        "retrievedAt": "2026-10-05T15:53:07.624Z"
+      },
+      {
+        "id": "official_home",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/",
+        "title": "Friseur Imhof in Unterhaching – Startseite",
+        "retrievedAt": "2026-10-05T16:16:04.565Z"
+      },
+      {
+        "id": "official_services",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/leistungen/",
+        "title": "Friseur Imhof in Unterhaching – Leistungen",
+        "retrievedAt": "2026-10-05T16:16:05.188Z"
+      },
+      {
+        "id": "official_prices",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/preise/",
+        "title": "Friseur Imhof in Unterhaching – Preise",
+        "retrievedAt": "2026-10-05T16:16:04.871Z"
+      },
+      {
+        "id": "official_contact",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/kontakt/",
+        "title": "Friseur Imhof in Unterhaching – Kontakt",
+        "retrievedAt": "2026-10-05T16:16:05.547Z"
+      },
+      {
+        "id": "operator_request_v1",
+        "type": "operator",
+        "url": null,
+        "title": "Auftrag: vollständige lokale Website einschließlich Einzelpreisen",
+        "retrievedAt": "2026-10-05T16:27:35.023Z"
+      }
+    ],
+    "operatorNotes": [
+      {
+        "text": "Das Eingabefeld identity enthält den Wert test. Wegen des klaren Platzhalterwerts wird der Geschäftsbetrieb anhand der angegebenen offiziellen Website bestimmt.",
+        "classification": "unclear",
+        "sourceId": "known_identity"
+      },
+      {
+        "text": "Vollständige produktionsfähige Website unter Desktop\\Imhof\\v1 erstellen und die Einzelpreise aus den offiziellen Original-PDFs auslesen.",
+        "classification": "instruction",
+        "sourceId": "operator_request_v1"
+      }
+    ],
+    "brandObservations": "Die bestehende Website spricht persönlich in der Ich-Form und mit Sie-Anrede. Ihre Tonalität betont individuelle Beratung, Erfahrung und persönliche Betreuung.",
+    "currentSiteAudit": "Die offizielle Website bestätigt Identität, Kontakt, Leistungen und zwei Preislisten-PDFs. Die PDFs wurden unverändert heruntergeladen, gerendert und visuell transkribiert. Beide führen zusätzlich Kinder- beziehungsweise Kosmetikpreise und den Anfahrtbetrag für Hausbesuche auf. Das Ausgangsimpressum bestätigt die Betreiberin und die Kontaktdaten.",
+    "audienceInsights": "Abgeleitet aus dem persönlichen Beratungsangebot und dem Salonstandort: Menschen aus Unterhaching und Umgebung, die einen individuellen Haarschnitt oder Beratung zu Schnitt und Farbe suchen und einen Termin direkt abstimmen möchten.",
+    "recommendedScope": "Eine redaktionell komponierte Startseite mit Leistungen, persönlichem Profil, konkreten Kontaktdaten und einem klar beschrifteten Preisauszug. Eine vollständige Preisseite enthält alle Einzelpositionen und beide unveränderten Original-PDFs. Impressum und Datenschutz erhalten eigene Seiten. Der Kundenpfad führt zum Telefon- oder E-Mail-Kontakt.",
+    "conflicts": [
+      {
+        "field": "Eingabename als Platzhalter eingeordnet; Betrieb anhand der offiziellen URL bestätigt",
+        "values": [
+          "test",
+          "Friseur Imhof, Marita Imhof, Unterhaching"
+        ],
+        "sourceIds": [
+          "known_identity",
+          "official_home"
+        ],
+        "critical": false
+      }
+    ],
+    "uncertainties": [
+      "Die veröffentlichten Preislisten-PDFs enthalten kein Datum. Die Preise sind aus den am 05.10.2026 abgerufenen Originalen übernommen.",
+      "Es liegt keine bestätigte Online-Buchung vor."
+    ],
+    "missingImportantInformation": []
+  },
+  "candidate": {
+    "schemaVersion": 2,
+    "researchHash": null,
+    "strategy": {
+      "audience": "Menschen aus Unterhaching und Umgebung, die eine persönliche Beratung zu Haarschnitt und Farbe suchen.",
+      "customerGoal": "inquiry",
+      "recruitingGoal": "none",
+      "rationale": "Das Growth-Paket führt klar zur Terminvereinbarung per Telefon. Kurzfristige Termine sind bestätigt, eine Online-Buchung jedoch nicht. Das redaktionelle Layout stellt die persönliche Beratung in den Mittelpunkt."
+    },
+    "designDirection": {
+      "character": "refined",
+      "colors": {
+        "primary": "#151916",
+        "background": "#F6F7F3",
+        "text": "#151916",
+        "accent": "#DCE5D5"
+      },
+      "typography": "geometric",
+      "shapeLanguage": "mixed",
+      "depth": "subtle",
+      "density": "airy",
+      "motion": "subtle",
+      "imageTreatment": "framed",
+      "navigationTreatment": "solid",
+      "ctaTreatment": "pill"
+    },
+    "navigation": [
+      {
+        "label": "Start",
+        "sectionId": "2f358327-6cbd-4dc6-bff1-c71b304b2b60",
+        "slug": "/"
+      },
+      {
+        "label": "Leistungen",
+        "sectionId": "d95523b0-325b-4b0b-a238-4194ef64baea",
+        "slug": "/"
+      },
+      {
+        "label": "Über Marita",
+        "sectionId": "82ba966e-9a82-40a9-8c77-bfd462e13f5d",
+        "slug": "/"
+      },
+      {
+        "label": "Preise",
+        "sectionId": null,
+        "slug": "preise"
+      },
+      {
+        "label": "Kontakt",
+        "sectionId": "87c02de9-6f9e-40e8-8421-978013610d07",
+        "slug": "/"
+      }
+    ],
+    "pages": [
+      {
+        "slug": "/",
+        "purpose": "customer",
+        "seo": {
+          "title": "Friseur Imhof in Unterhaching | Marita Imhof",
+          "description": "Persönliche Friseurberatung bei Marita Imhof in Unterhaching. Haarschnitt, Beratung zu Schnitt und Farbe sowie Terminvereinbarung per Telefon."
+        },
+        "sections": [
+          {
+            "id": "2f358327-6cbd-4dc6-bff1-c71b304b2b60",
+            "heading": "Ihr Haar. Ihr Stil. Ganz Sie.",
+            "text": "Ein Look, der sich nach Ihnen anfühlt. Persönliche Beratung, Schnitt und Farbe – mit Marita Imhof, Friseurmeisterin seit 1984.",
+            "surface": "base",
+            "visualWeight": "strong",
+            "type": "hero",
+            "variant": "editorial-split",
+            "imageAssetId": null,
+            "quickFactIds": [
+              "location",
+              "phone",
+              "opening_hours",
+              "street"
+            ],
+            "action": {
+              "label": "Termin anfragen",
+              "intent": "customer",
+              "pathId": "phone_main"
+            }
+          },
+          {
+            "id": "d95523b0-325b-4b0b-a238-4194ef64baea",
+            "heading": "Beratung, Schnitt und Pflege",
+            "text": "Im persönlichen Gespräch entwickeln wir gemeinsam, was zu Ihrem Haar und Ihren Vorstellungen passt. Auf Wunsch berät Marita Imhof auch zu Farbe, Pflege und Styling.",
+            "surface": "tinted",
+            "visualWeight": "balanced",
+            "type": "services",
+            "variant": "editorial-lines",
+            "items": [
+              {
+                "serviceId": "haircut",
+                "text": "Schnitt und Styling für Damen, Herren und Kinder."
+              },
+              {
+                "serviceId": "color",
+                "text": "Färben, Tönungen und Strähnen – beraten und passend abgestimmt."
+              },
+              {
+                "serviceId": "care_recommendation",
+                "text": "Empfehlungen zu Haarpflege und Styling."
+              },
+              {
+                "serviceId": "occasion_styling",
+                "text": "Ein persönlich abgestimmtes Paket für Hochzeit oder Kommunion."
+              }
+            ]
+          },
+          {
+            "id": "82ba966e-9a82-40a9-8c77-bfd462e13f5d",
+            "heading": "Erfahrung, die zuhört",
+            "text": "Seit 1984 ist Marita Imhof Friseurmeisterin. Ihre Beratung beginnt bei dem, was Sie sich wünschen: Gemeinsam wird besprochen, welcher Schnitt oder welche Farbe zu Ihnen passt.",
+            "surface": "base",
+            "visualWeight": "balanced",
+            "type": "about",
+            "variant": "portrait-story",
+            "imageAssetId": null,
+            "factIds": [
+              "master_since_1984",
+              "individual_consultation"
+            ]
+          },
+          {
+            "id": "cfc2ff09-d4d9-4898-a5b6-20f2bd44efdb",
+            "heading": "Damenhaarschnitt · Preisauszug",
+            "text": "Waschen, Schneiden, Haarfestiger und Föhnen/Legen. Die vollständige Liste steht auf der Preisseite und im Original-PDF.",
+            "surface": "base",
+            "visualWeight": "balanced",
+            "type": "pricing",
+            "variant": "excerpt-document",
+            "groupIds": [
+              "prices_damen"
+            ],
+            "excerpt": true,
+            "documentAssetId": "3864ec23-f749-4665-87b6-0626dbd88d57"
+          },
+          {
+            "id": "357512bf-c403-4b27-b6e8-9ee8e9bfcddd",
+            "heading": "Herrenhaarschnitt · Preisauszug",
+            "text": "Einige Haarschnittpreise im Überblick. Vollständige Preise einschließlich Senioren und Kindern auf der Preisseite und im Original-PDF.",
+            "surface": "base",
+            "visualWeight": "balanced",
+            "type": "pricing",
+            "variant": "excerpt-document",
+            "groupIds": [
+              "prices_herren"
+            ],
+            "excerpt": true,
+            "documentAssetId": "e710a8a3-166c-4675-b7c1-503645f1644f"
+          },
+          {
+            "id": "87c02de9-6f9e-40e8-8421-978013610d07",
+            "heading": "Lassen Sie uns Ihren Termin besprechen",
+            "text": "Rufen Sie an oder schreiben Sie eine E-Mail. Erreichbar Montag bis Freitag von 9.00 bis 20.00 Uhr; Termine können auch kurzfristig vereinbart werden.",
+            "surface": "contrast",
+            "visualWeight": "strong",
+            "type": "contact",
+            "variant": "quick-contact",
+            "action": {
+              "label": "Jetzt anrufen",
+              "intent": "contact",
+              "pathId": "phone_main"
+            }
+          }
+        ]
+      },
+      {
+        "slug": "preise",
+        "purpose": "customer",
+        "seo": {
+          "title": "Alle Preise · Friseur Imhof in Unterhaching",
+          "description": "Die vollständigen Preise für Damen, Herren, Kinder, Senioren, Bartpflege und Kosmetik bei Friseur Imhof. Mit beiden Original-Preislisten als PDF."
+        },
+        "sections": [
+          {
+            "id": "a87a0554-2bb4-46d9-a091-efae8a529d3d",
+            "heading": "Alle Preise im Überblick",
+            "text": "Die vollständigen Einzelpreise für Damen, Herren, Kinder, Senioren, Bartpflege, Kosmetik und Hausbesuche.",
+            "surface": "base",
+            "visualWeight": "strong",
+            "type": "hero",
+            "variant": "centered-minimal",
+            "imageAssetId": null,
+            "quickFactIds": [
+              "phone"
+            ],
+            "action": {
+              "label": "Termin anfragen",
+              "intent": "customer",
+              "pathId": "phone_main"
+            }
+          },
+          {
+            "id": "c5e8dc98-7e95-4b4a-82b8-e0706497ab50",
+            "heading": "Damen, Haarpflege und Kosmetik",
+            "text": "Vollständige Damenpreisliste einschließlich Anfahrt für Hausbesuche.",
+            "surface": "base",
+            "visualWeight": "balanced",
+            "type": "pricing",
+            "variant": "grouped-editorial",
+            "groupIds": [
+              "prices_damen"
+            ],
+            "excerpt": false,
+            "documentAssetId": "3864ec23-f749-4665-87b6-0626dbd88d57"
+          },
+          {
+            "id": "a98c350e-049d-4508-9d86-bbf74222ac47",
+            "heading": "Herren, Senioren, Kinder und Bartpflege",
+            "text": "Vollständige Herrenpreisliste einschließlich Anfahrt für Hausbesuche.",
+            "surface": "tinted",
+            "visualWeight": "balanced",
+            "type": "pricing",
+            "variant": "grouped-editorial",
+            "groupIds": [
+              "prices_herren"
+            ],
+            "excerpt": false,
+            "documentAssetId": "e710a8a3-166c-4675-b7c1-503645f1644f"
+          },
+          {
+            "id": "06f0ef64-0d8f-47bc-91fa-5b9cb5293912",
+            "heading": "Ihren Termin persönlich abstimmen",
+            "text": "Fragen zu einer Leistung oder Ihrem Termin? Marita Imhof ist telefonisch erreichbar.",
+            "surface": "contrast",
+            "visualWeight": "balanced",
+            "type": "contact",
+            "variant": "strong-cta",
+            "action": {
+              "label": "Jetzt anrufen",
+              "intent": "contact",
+              "pathId": "phone_main"
+            }
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Die Originalpreislisten enthalten kein Datum. Einzelpreise wurden aus den abgerufenen offiziellen PDFs unverändert übernommen. Lokale Dokumente haben keine serverseitige managedAssetId."
+    ],
+    "engineGaps": []
+  }
+}

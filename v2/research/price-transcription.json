@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "method": "Visuelle Transkription der lokal gerenderten Original-PDFs; Preise unverändert übernommen.",
+  "sourceId": "official_prices",
+  "sourceDocuments": {
+    "damen": { "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Damen.pdf", "localPath": "assets/documents/preisliste-damen.pdf" },
+    "herren": { "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Herren.pdf", "localPath": "assets/documents/preisliste-herren.pdf" }
+  },
+  "notes": {
+    "variation": "Bei höherem Materialaufwand oder Arbeitsaufwand kann sich der Preis ändern.",
+    "tax": "Umsatzsteuer wird gemäß § 19 Abs. 1 UStG nicht gesondert ausgewiesen.",
+    "validity": "Nach den Original-PDFs ersetzen diese Listen alle vorherigen Preislisten. Die PDFs enthalten kein Gültigkeitsdatum.",
+    "houseVisit": "Hausbesuche auf Anfrage. Der ausgewiesene Betrag ist die Anfahrt, nicht die Friseurleistung."
+  },
+  "groups": [
+    { "id": "damen-schnitt", "label": "Damenhaarschnitt", "category": "damen", "pdfAudiences": ["damen"], "description": "Waschen, Schneiden, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "52,50 €" },
+      { "label": "Mittellanges Haar", "priceText": "60,50 €" },
+      { "label": "Langes Haar", "priceText": "68,00 €" }
+    ] },
+    { "id": "damen-foehnen", "label": "Föhnen/Legen", "category": "damen", "pdfAudiences": ["damen"], "description": "Waschen, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "28,50 €" },
+      { "label": "Mittellanges Haar", "priceText": "34,00 €" },
+      { "label": "Langes Haar", "priceText": "36,00 €" }
+    ] },
+    { "id": "damen-dauerwelle", "label": "Dauerwelle", "category": "damen", "pdfAudiences": ["damen"], "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "106,00 €" },
+      { "label": "Mittellanges Haar", "priceText": "116,00 €" },
+      { "label": "Langes Haar", "priceText": "125,50 €" }
+    ] },
+    { "id": "damen-straehnen", "label": "Strähnen", "category": "damen", "pdfAudiences": ["damen"], "description": "Packung, Schneiden, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "106,00 €" },
+      { "label": "Mittellanges Haar", "priceText": "116,00 €" },
+      { "label": "Langes Haar", "priceText": "125,00 €" }
+    ] },
+    { "id": "damen-toenungen", "label": "Tönungen", "category": "damen", "pdfAudiences": ["damen"], "description": "Schneiden, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "86,50 €" },
+      { "label": "Mittellanges Haar", "priceText": "95,00 €" },
+      { "label": "Langes Haar", "priceText": "101,50 €" }
+    ] },
+    { "id": "damen-faerben", "label": "Färben", "category": "damen", "pdfAudiences": ["damen"], "description": "Schneiden, Haarfestiger, Föhnen/Legen", "rows": [
+      { "label": "Kurzes Haar", "priceText": "92,50 €" },
+      { "label": "Mittellanges Haar", "priceText": "104,00 €" },
+      { "label": "Langes Haar", "priceText": "113,00 €" }
+    ] },
+    { "id": "haarpflege", "label": "Haarpackung", "category": "extras", "pdfAudiences": ["damen"], "description": "Pflege für Ihr Haar", "rows": [
+      { "label": "Für kurzes Haar", "priceText": "7,50 €" },
+      { "label": "Für mittellanges Haar", "priceText": "10,00 €" },
+      { "label": "Für langes Haar", "priceText": "10,00 €" }
+    ] },
+    { "id": "kosmetik", "label": "Kosmetische Behandlung", "category": "extras", "pdfAudiences": ["damen"], "description": "Augenbrauen und Wimpern", "rows": [
+      { "label": "Augenbrauen zupfen", "priceText": "12,00 €" },
+      { "label": "Augenbrauen färben", "priceText": "12,00 €" },
+      { "label": "Wimpern färben", "priceText": "16,00 €" }
+    ] },
+    { "id": "herren-schnitt", "label": "Herrenhaarschnitt", "category": "herren", "pdfAudiences": ["herren"], "description": "Schnitt und Pflege", "rows": [
+      { "label": "Trockenhaarschnitt: Schneiden, Föhnen", "priceText": "24,00 €" },
+      { "label": "Nasshaarschnitt: Waschen, Schneiden, Föhnen", "priceText": "29,00 €" },
+      { "label": "Maschinenhaarschnitt: Schneiden, Föhnen", "priceText": "20,50 €" },
+      { "label": "Maschinenhaarschnitt: Waschen, Schneiden, Föhnen", "priceText": "24,50 €" },
+      { "label": "Haarwasser mit Kopfmassage", "priceText": "9,00 €" }
+    ] },
+    { "id": "senioren", "label": "Seniorenhaarschnitt ab 65", "category": "herren", "pdfAudiences": ["herren"], "description": "Preise für Senioren ab 65 Jahren", "rows": [
+      { "label": "Trockenhaarschnitt: Schneiden, Föhnen", "priceText": "18,50 €" },
+      { "label": "Nasshaarschnitt: Waschen, Schneiden, Föhnen", "priceText": "23,50 €" },
+      { "label": "Kranzhaarschnitt: Schneiden, Föhnen", "priceText": "17,00 €" },
+      { "label": "Kranzhaarschnitt: Waschen, Schneiden, Föhnen", "priceText": "20,50 €" },
+      { "label": "Haarwasser mit Kopfmassage", "priceText": "9,00 €" }
+    ] },
+    { "id": "bartpflege", "label": "Bartpflege", "category": "herren", "pdfAudiences": ["herren"], "description": "Schneiden und Rasieren", "rows": [
+      { "label": "Bart schneiden", "priceText": "17,50 €" },
+      { "label": "Bartrasur nass", "priceText": "23,50 €" },
+      { "label": "Schnurrbart schneiden", "priceText": "11,00 €" }
+    ] },
+    { "id": "prinzessinnen", "label": "Prinzessinnen", "category": "kinder", "pdfAudiences": ["herren"], "description": "Kinderpreise für Mädchen", "notes": "Ab 16 Jahren gilt die Preisliste Damen.", "rows": [
+      { "label": "0–5 Jahre: Schneiden, Föhnen", "priceText": "18,50 €" },
+      { "label": "0–5 Jahre: Waschen, Schneiden, Föhnen", "priceText": "21,50 €" },
+      { "label": "6–10 Jahre: Schneiden, Föhnen", "priceText": "22,00 €" },
+      { "label": "6–10 Jahre: Waschen, Schneiden, Föhnen", "priceText": "24,00 €" },
+      { "label": "11–15 Jahre: Schneiden, Föhnen", "priceText": "27,00 €" },
+      { "label": "11–15 Jahre: Waschen, Schneiden, Föhnen", "priceText": "34,50 €" }
+    ] },
+    { "id": "lausbuam", "label": "Lausbuam", "category": "kinder", "pdfAudiences": ["herren"], "description": "Kinderpreise für Jungen", "notes": "Ab 16 Jahren gilt die Preisliste Herren.", "rows": [
+      { "label": "0–5 Jahre: Schneiden, Föhnen", "priceText": "18,50 €" },
+      { "label": "0–5 Jahre: Waschen, Schneiden, Föhnen", "priceText": "21,50 €" },
+      { "label": "6–10 Jahre: Schneiden, Föhnen", "priceText": "20,50 €" },
+      { "label": "6–10 Jahre: Waschen, Schneiden, Föhnen", "priceText": "24,00 €" },
+      { "label": "11–15 Jahre: Schneiden, Föhnen", "priceText": "21,50 €" },
+      { "label": "11–15 Jahre: Waschen, Schneiden, Föhnen", "priceText": "24,50 €" }
+    ] },
+    { "id": "hausbesuche", "label": "Hausbesuche", "category": "extras", "pdfAudiences": ["damen", "herren"], "description": "Auf Anfrage; der Betrag gilt für die Anfahrt.", "rows": [
+      { "label": "Anfahrt", "priceText": "10,50 €" }
+    ] }
+  ]
+}

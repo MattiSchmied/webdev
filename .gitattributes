@@ -1,0 +1,4 @@
+# Preserve downloaded source evidence and the original font license verbatim.
+v2/research/*.html -text whitespace=-blank-at-eol
+v2/assets/fonts/OFL.txt -text whitespace=-blank-at-eol
+v2/dist/assets/fonts/OFL.txt -text whitespace=-blank-at-eol

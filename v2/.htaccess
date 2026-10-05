@@ -1,0 +1,16 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-i729qhVZ06yoVlHxTTZEDuuvnKYk76K+gwkZ2CucrPo=' 'sha256-i9nMvfOox4XGu6U5u0olEU2XVdN1QsH8kpGWaXmsGXQ='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "no-referrer"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set X-Frame-Options "DENY"
+</IfModule>
+<IfModule mod_alias.c>
+RedirectMatch 301 ^/preise/?$ /preise.html
+RedirectMatch 301 ^/leistungen/?$ /index.html#leistungen
+RedirectMatch 301 ^/(kontakt|anfahrt)/?$ /index.html#kontakt
+RedirectMatch 301 ^/impressum-datenschutz/?$ /impressum.html
+</IfModule>

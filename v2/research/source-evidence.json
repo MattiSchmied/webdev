@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "evidence": [
+    {
+      "sourceId": "official_home",
+      "url": "https://www.friseur-imhof.de/",
+      "checksum": "a894cd1428aaa21d281a8502daf76c3d78739395574023e2cc5f10f1afa0530e",
+      "verified": true,
+      "localFile": "research/home.html"
+    },
+    {
+      "sourceId": "official_services",
+      "url": "https://www.friseur-imhof.de/leistungen/",
+      "checksum": "d33ee6cc08c53ec85e4c0ccda1e88ea2feb9575329f735bf68bd32749203e1b8",
+      "verified": true,
+      "localFile": "research/services.html"
+    },
+    {
+      "sourceId": "official_prices",
+      "url": "https://www.friseur-imhof.de/preise/",
+      "checksum": "a4815f831f7ea3e1dee694c01de8101132b26462a1b6d94833a49f4bed251035",
+      "verified": true,
+      "localFile": "research/prices.html"
+    },
+    {
+      "sourceId": "official_contact",
+      "url": "https://www.friseur-imhof.de/kontakt/",
+      "checksum": "28d37ffdd9d540e752c798b173a47bc88d7d66502a17fbedbadb6c70b9cc95a4",
+      "verified": true,
+      "localFile": "research/contact.html"
+    }
+  ],
+  "relatedOfficialPages": [
+    {
+      "sourceId": "official_home",
+      "url": "https://www.friseur-imhof.de/impressum-datenschutz/",
+      "localFile": "research/legal-source.html",
+      "checksum": "abd1ff17eb947e7779df90ae230c441349f2a8b04f7d5bb1ac2f14acdcc03ee3"
+    },
+    {
+      "sourceId": "official_home",
+      "url": "https://www.friseur-imhof.de/anfahrt/",
+      "localFile": "research/directions-source.html",
+      "checksum": "ce4ae1cd669d7921ab5ce47170d6898552cfa36538b6f28b0adb72c236aa7c67"
+    }
+  ],
+  "priceDocuments": [
+    {
+      "id": "3864ec23-f749-4665-87b6-0626dbd88d57",
+      "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Damen.pdf",
+      "originPage": "https://www.friseur-imhof.de/preise/",
+      "sourceId": "official_prices",
+      "mimeType": "application/pdf",
+      "width": null,
+      "height": null,
+      "alt": "Original-Preisliste Damen",
+      "context": "Offizielle PDF-Preisliste, lokal unverändert gespeichert; Preise visuell mit dem gerenderten Original abgeglichen.",
+      "category": "priceList",
+      "confidence": 1,
+      "rights": "official_business_source",
+      "discoveredAt": "2026-10-05T16:16:04.050Z",
+      "checksum": "f2d1e135fdc2468cfe6119cb4760453ebc05e62dbecc06172285f0b6c68f1c99",
+      "managedAssetId": null,
+      "verified": true,
+      "verification": "Gerenderte Originalseite visuell gelesen und sämtliche Preispositionen transkribiert."
+    },
+    {
+      "id": "e710a8a3-166c-4675-b7c1-503645f1644f",
+      "url": "https://www.friseur-imhof.de/wp-content/uploads/Preisliste_Herren.pdf",
+      "originPage": "https://www.friseur-imhof.de/preise/",
+      "sourceId": "official_prices",
+      "mimeType": "application/pdf",
+      "width": null,
+      "height": null,
+      "alt": "Original-Preisliste Herren",
+      "context": "Offizielle PDF-Preisliste, lokal unverändert gespeichert; Preise visuell mit dem gerenderten Original abgeglichen.",
+      "category": "priceList",
+      "confidence": 1,
+      "rights": "official_business_source",
+      "discoveredAt": "2026-10-05T16:16:04.220Z",
+      "checksum": "a2d2ee34c517b765379852e5a3daa18c68aa82f7fb097a29f091241c2f929d6b",
+      "managedAssetId": null,
+      "verified": true,
+      "verification": "Gerenderte Originalseite visuell gelesen und sämtliche Preispositionen transkribiert."
+    }
+  ],
+  "legalReferences": [
+    "https://www.gesetze-im-internet.de/ddg/__5.html",
+    "https://eur-lex.europa.eu/eli/reg/2016/679/oj/deu"
+  ],
+  "pricesPerOriginal": {
+    "damen": 25,
+    "herren": 26
+  },
+  "uniqueDisplayedPriceRows": 50,
+  "note": "Die Anfahrt für Hausbesuche steht identisch in beiden PDFs und wird auf der Website einmal dargestellt."
+}

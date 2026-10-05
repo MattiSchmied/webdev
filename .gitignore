@@ -1,0 +1,4 @@
+node_modules/
+v2/checks/
+.DS_Store
+Thumbs.db

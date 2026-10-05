@@ -1,0 +1,505 @@
+{
+  "research": {
+    "schemaVersion": 1,
+    "sourceSnapshotHash": "74bcb64d48fb14990d9fcbdbae1d64082bfd88accddb2a8c79625f19641402c4",
+    "packageSelection": {
+      "basePackage": "growth",
+      "modules": {
+        "team": false
+      }
+    },
+    "identity": {
+      "companyName": "Friseur Imhof, Marita Imhof",
+      "industry": "Friseursalon",
+      "location": "Unterhaching"
+    },
+    "businessFacts": [
+      {
+        "id": "business_name",
+        "category": "name",
+        "value": "Friseur Imhof; Inhaberin Marita Imhof",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "industry",
+        "category": "industry",
+        "value": "Friseursalon",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "location",
+        "category": "location",
+        "value": "82008 Unterhaching",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "street",
+        "category": "street",
+        "value": "Goerdelerstr. 49",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "postal_code",
+        "category": "postalCode",
+        "value": "82008",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "city",
+        "category": "city",
+        "value": "Unterhaching",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "phone",
+        "category": "phone",
+        "value": "089 / 611 26 83",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "email",
+        "category": "email",
+        "value": "info@friseur-imhof.de",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "opening_hours",
+        "category": "openingHours",
+        "value": "[{\"day\":\"mon\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"tue\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"wed\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"thu\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]},{\"day\":\"fri\",\"ranges\":[{\"opens\":\"09:00\",\"closes\":\"20:00\"}]}]",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "master_since_1984",
+        "category": "credential",
+        "value": "Marita Imhof ist seit 1984 Friseurmeisterin.",
+        "sourceIds": [
+          "official_home"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "individual_consultation",
+        "category": "benefit",
+        "value": "Persönliche Beratung orientiert sich an den Wünschen und Vorstellungen der Kundinnen und Kunden.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "home_visits",
+        "category": "benefit",
+        "value": "Hausbesuche sind nach Absprache möglich.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "occasion_service",
+        "category": "benefit",
+        "value": "Für Hochzeit und Kommunion wird ein Rundum-Paket angeboten.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "short_notice",
+        "category": "benefit",
+        "value": "Termine können kurzfristig vereinbart werden.",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      }
+    ],
+    "services": [
+      {
+        "id": "haircut",
+        "title": "Haarschnitt",
+        "description": "Individuelle Empfehlungen zu einem Schnitt, der zu den persönlichen Wünschen passt.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "style_consultation",
+        "title": "Persönliche Beratung",
+        "description": "Beratung zu Schnitt, Farbe und typgerechten Empfehlungen.",
+        "sourceIds": [
+          "official_home",
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "care_recommendation",
+        "title": "Haarpflege und Styling",
+        "description": "Empfehlungen zu Haarpflege- und Stylingprodukten sowie kosmetischen Fragen.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "home_visit",
+        "title": "Hausbesuch",
+        "description": "Ein Termin zuhause kann nach Absprache vereinbart werden.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      },
+      {
+        "id": "occasion_styling",
+        "title": "Hochzeit und Kommunion",
+        "description": "Ein Rundum-Paket für den besonderen Anlass wird persönlich abgestimmt.",
+        "sourceIds": [
+          "official_services"
+        ],
+        "confidence": 0.99,
+        "status": "confirmed"
+      }
+    ],
+    "jobs": [],
+    "pricing": [
+      {
+        "id": "prices_herren",
+        "heading": "Preisliste Herren",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "status": "unavailable",
+        "items": [
+          {
+            "id": "price_list_herren_pdf",
+            "title": "Preisliste Herren (PDF)",
+            "description": "Die offizielle Website verlinkt eine Herrenpreisliste als PDF.",
+            "priceText": "Preise im Original-PDF",
+            "notes": "Einzelpreise waren in der Texterfassung nicht zuverlässig lesbar."
+          }
+        ]
+      },
+      {
+        "id": "prices_damen",
+        "heading": "Preisliste Damen",
+        "sourceIds": [
+          "official_prices"
+        ],
+        "status": "unavailable",
+        "items": [
+          {
+            "id": "price_list_damen_pdf",
+            "title": "Preisliste Damen (PDF)",
+            "description": "Die offizielle Website verlinkt eine Damenpreisliste als PDF.",
+            "priceText": "Preise im Original-PDF",
+            "notes": "Einzelpreise waren in der Texterfassung nicht zuverlässig lesbar."
+          }
+        ]
+      }
+    ],
+    "bookingAndContactPaths": [
+      {
+        "id": "phone_main",
+        "type": "phone",
+        "value": "089 / 611 26 83",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "email_main",
+        "type": "email",
+        "value": "info@friseur-imhof.de",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      },
+      {
+        "id": "contact_page",
+        "type": "contact",
+        "value": "https://www.friseur-imhof.de/kontakt/",
+        "sourceIds": [
+          "official_contact"
+        ],
+        "confidence": 1,
+        "status": "confirmed"
+      }
+    ],
+    "reviewSignals": [],
+    "assets": [],
+    "sources": [
+      {
+        "id": "known_identity",
+        "type": "known_identity",
+        "url": null,
+        "title": "test",
+        "retrievedAt": "2026-10-05T15:53:07.624Z"
+      },
+      {
+        "id": "official_home",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/",
+        "title": "Friseur Imhof in Unterhaching – Startseite",
+        "retrievedAt": "2026-10-05T15:58:54Z"
+      },
+      {
+        "id": "official_services",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/leistungen/",
+        "title": "Friseur Imhof in Unterhaching – Leistungen",
+        "retrievedAt": "2026-10-05T15:58:54Z"
+      },
+      {
+        "id": "official_prices",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/preise/",
+        "title": "Friseur Imhof in Unterhaching – Preise",
+        "retrievedAt": "2026-10-05T15:58:54Z"
+      },
+      {
+        "id": "official_contact",
+        "type": "official_website",
+        "url": "https://www.friseur-imhof.de/kontakt/",
+        "title": "Friseur Imhof in Unterhaching – Kontakt",
+        "retrievedAt": "2026-10-05T15:58:54Z"
+      }
+    ],
+    "operatorNotes": [
+      {
+        "text": "Das Eingabefeld identity enthält den Wert test. Wegen des klaren Platzhalterwerts wird der Geschäftsbetrieb anhand der angegebenen offiziellen Website bestimmt.",
+        "classification": "unclear",
+        "sourceId": "known_identity"
+      }
+    ],
+    "brandObservations": "Die bestehende Website spricht persönlich in der Ich-Form und mit Sie-Anrede. Ihre Tonalität betont individuelle Beratung, Erfahrung und persönliche Betreuung.",
+    "currentSiteAudit": "Die bestehende Website stellt Inhaberin, Leistungen, Kontakt und Preislisten bereit. Die Preislisten sind als zwei PDFs verlinkt; die Einzelpreise waren in der verfügbaren Texterfassung nicht zuverlässig lesbar. Im gelieferten Snapshot sind keine verwalteten Bild- oder Dokumentassets enthalten.",
+    "audienceInsights": "Abgeleitet aus dem persönlichen Beratungsangebot und dem Salonstandort: Menschen aus Unterhaching und Umgebung, die einen individuellen Haarschnitt oder Beratung zu Schnitt und Farbe suchen und einen Termin direkt abstimmen möchten.",
+    "recommendedScope": "Eine kompakte, typografisch geprägte Wachstumsseite mit Leistungen, persönlichem Profil, belegter Meisterqualifikation und gut sichtbarem Telefonkontakt. Die Preis-PDFs sollten erst nach lesbarer Prüfung als verwaltete Dokumente ergänzt werden.",
+    "conflicts": [
+      {
+        "field": "Unternehmensidentität im Eingabesnapshot",
+        "values": [
+          "test",
+          "Friseur Imhof, Marita Imhof, Unterhaching"
+        ],
+        "sourceIds": [
+          "known_identity",
+          "official_home"
+        ],
+        "critical": true
+      }
+    ],
+    "uncertainties": [
+      "Einzelpreise aus den offiziellen Damen- und Herren-PDFs konnten nicht zuverlässig ausgelesen werden.",
+      "Keine verwalteten Bild- oder Dokumentassets waren im gelieferten Snapshot enthalten."
+    ],
+    "missingImportantInformation": [
+      "Verlässliche Einzelpreise aus den offiziellen Preislisten-PDFs.",
+      "Für die Kandidatenseite freigegebene und verwaltete Bild- oder PDF-Assets."
+    ]
+  },
+  "candidate": {
+    "schemaVersion": 2,
+    "researchHash": null,
+    "strategy": {
+      "audience": "Menschen aus Unterhaching und Umgebung, die eine persönliche Beratung zu Haarschnitt und Farbe suchen.",
+      "customerGoal": "booking",
+      "recruitingGoal": "none",
+      "rationale": "Das Growth-Paket führt klar zur Terminvereinbarung per Telefon. Kurzfristige Termine sind bestätigt, eine Online-Buchung jedoch nicht. Das redaktionelle Layout stellt die persönliche Beratung in den Mittelpunkt."
+    },
+    "designDirection": {
+      "character": "editorial",
+      "colors": {
+        "primary": "#29231E",
+        "background": "#F7F4EF",
+        "text": "#29231E",
+        "accent": "#E5D8C8"
+      },
+      "typography": "editorial",
+      "shapeLanguage": "mixed",
+      "depth": "subtle",
+      "density": "airy",
+      "motion": "none",
+      "imageTreatment": "restrained",
+      "navigationTreatment": "solid",
+      "ctaTreatment": "rounded"
+    },
+    "navigation": [
+      {
+        "label": "Start",
+        "sectionId": "2f358327-6cbd-4dc6-bff1-c71b304b2b60",
+        "slug": "/"
+      },
+      {
+        "label": "Leistungen",
+        "sectionId": "d95523b0-325b-4b0b-a238-4194ef64baea",
+        "slug": "/"
+      },
+      {
+        "label": "Über Marita",
+        "sectionId": "82ba966e-9a82-40a9-8c77-bfd462e13f5d",
+        "slug": "/"
+      },
+      {
+        "label": "Kontakt",
+        "sectionId": "87c02de9-6f9e-40e8-8421-978013610d07",
+        "slug": "/"
+      }
+    ],
+    "pages": [
+      {
+        "slug": "/",
+        "purpose": "customer",
+        "seo": {
+          "title": "Friseur Imhof in Unterhaching | Marita Imhof",
+          "description": "Persönliche Friseurberatung bei Marita Imhof in Unterhaching. Haarschnitt, Beratung zu Schnitt und Farbe sowie Terminvereinbarung per Telefon."
+        },
+        "sections": [
+          {
+            "id": "2f358327-6cbd-4dc6-bff1-c71b304b2b60",
+            "heading": "Ein Schnitt, der zu Ihnen passt",
+            "text": "Bei Friseur Imhof in Unterhaching stehen Sie und Ihre Wünsche im Mittelpunkt. Marita Imhof verbindet persönliche Beratung mit Erfahrung im Friseurhandwerk.",
+            "surface": "base",
+            "visualWeight": "strong",
+            "type": "hero",
+            "variant": "editorial-split",
+            "imageAssetId": null,
+            "quickFactIds": [
+              "location",
+              "phone",
+              "opening_hours"
+            ],
+            "action": {
+              "label": "Termin telefonisch abstimmen",
+              "intent": "customer",
+              "pathId": "phone_main"
+            }
+          },
+          {
+            "id": "d95523b0-325b-4b0b-a238-4194ef64baea",
+            "heading": "Beratung, Schnitt und Pflege",
+            "text": "Im persönlichen Gespräch entwickeln wir gemeinsam, was zu Ihrem Haar und Ihren Vorstellungen passt. Auf Wunsch berät Marita Imhof auch zu Farbe, Pflege und Styling.",
+            "surface": "tinted",
+            "visualWeight": "balanced",
+            "type": "services",
+            "variant": "editorial-lines",
+            "items": [
+              {
+                "serviceId": "haircut",
+                "text": "Ein Haarschnitt, der Ihre Wünsche aufnimmt."
+              },
+              {
+                "serviceId": "style_consultation",
+                "text": "Persönliche Beratung zu Schnitt, Farbe und typgerechten Empfehlungen."
+              },
+              {
+                "serviceId": "care_recommendation",
+                "text": "Empfehlungen zu Haarpflege, Styling und kosmetischen Fragen."
+              },
+              {
+                "serviceId": "home_visit",
+                "text": "Hausbesuche sind nach Absprache möglich."
+              },
+              {
+                "serviceId": "occasion_styling",
+                "text": "Für Hochzeit und Kommunion wird ein persönliches Rundum-Paket abgestimmt."
+              }
+            ]
+          },
+          {
+            "id": "82ba966e-9a82-40a9-8c77-bfd462e13f5d",
+            "heading": "Erfahrung, die zuhört",
+            "text": "Seit 1984 ist Marita Imhof Friseurmeisterin. Ihre Beratung beginnt bei dem, was Sie sich wünschen: Gemeinsam wird besprochen, welcher Schnitt oder welche Farbe zu Ihnen passt.",
+            "surface": "base",
+            "visualWeight": "balanced",
+            "type": "about",
+            "variant": "portrait-story",
+            "imageAssetId": null,
+            "factIds": [
+              "master_since_1984",
+              "individual_consultation"
+            ]
+          },
+          {
+            "id": "87c02de9-6f9e-40e8-8421-978013610d07",
+            "heading": "Lassen Sie uns Ihren Termin besprechen",
+            "text": "Rufen Sie an oder schreiben Sie eine E-Mail. Erreichbar Montag bis Freitag von 9.00 bis 20.00 Uhr; Termine können auch kurzfristig vereinbart werden.",
+            "surface": "contrast",
+            "visualWeight": "strong",
+            "type": "contact",
+            "variant": "quick-contact",
+            "action": {
+              "label": "Jetzt anrufen",
+              "intent": "contact",
+              "pathId": "phone_main"
+            }
+          }
+        ]
+      }
+    ],
+    "warnings": [
+      "Die Einzelpreise aus den offiziellen PDF-Preislisten waren nicht zuverlässig lesbar. Die Seite enthält deshalb keine unbestätigten Beträge und bindet die PDFs erst nach Prüfung als verwaltete Dokumente ein."
+    ],
+    "engineGaps": [
+      {
+        "requestedFeature": "Offizielle Preislisten-PDFs als verwaltete Dokumente anzeigen",
+        "reason": "Die Quelle verlinkt Damen- und Herrenpreislisten, aber im Eingabesnapshot sind keine verwalteten Dokumentassets enthalten und die Einzelpreise waren in der Texterfassung nicht lesbar.",
+        "currentAlternative": "Die Seite führt zur persönlichen Terminvereinbarung per Telefon. Die Original-PDFs können nach Prüfung als verwaltete Dokumente ergänzt werden."
+      }
+    ]
+  }
+}

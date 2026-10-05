@@ -1,0 +1,14 @@
+{
+  "name": "friseur-imhof-v1",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "build": "node src/build.ts",
+    "check": "node src/check.ts",
+    "start": "node src/serve.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.3" }
+}
