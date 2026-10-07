@@ -6,7 +6,9 @@ import { stripTypeScriptTypes } from 'node:module';
 import type { ResearchPack, PriceItem } from './types.ts';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dist = resolve(root, 'dist');
+const dist = process.env.OUTPUT_DIR ? resolve(process.env.OUTPUT_DIR) : resolve(root, 'dist');
+const writeMirror = process.env.WRITE_MIRROR !== 'false';
+const targets = writeMirror ? [root, dist] : [dist];
 const deploymentURL = new URL(process.env.SITE_URL || 'https://mattischmied.github.io/webdev/');
 if (deploymentURL.protocol !== 'https:' || deploymentURL.username || deploymentURL.password || deploymentURL.search || deploymentURL.hash) throw new Error('SITE_URL must be a clean HTTPS URL.');
 if (!deploymentURL.pathname.endsWith('/')) deploymentURL.pathname += '/';
@@ -129,12 +131,12 @@ for (const page of pages) {
   if (page.noindex) content = content.replace(/\b(href|src)="([^"#]+)"/g, (match, attribute: string, resource: string) => /^(?:[a-z]+:|\/)/i.test(resource) ? match : `${attribute}="${html(siteBasePath)}${resource}"`);
   content = content.replace(/[ \t]+$/gm, '');
   writeFileSync(resolve(dist, page.file), content);
-  writeFileSync(resolve(root, page.file), content);
+  if (writeMirror) writeFileSync(resolve(root, page.file), content);
 }
 const css = readFileSync(resolve(root, 'src/styles.css'));
 const client = stripTypeScriptTypes(readFileSync(resolve(root, 'src/client.ts'), 'utf8'), { mode: 'strip' });
 const favicon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#151916"/><text x="32" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="46" fill="#DCE5D5">i.</text></svg>';
-for (const target of [root, dist]) {
+for (const target of targets) {
   mkdirSync(resolve(target, 'assets/documents'), { recursive: true });
   writeFileSync(resolve(target, 'assets/site.css'), css);
   writeFileSync(resolve(target, 'assets/site.js'), client);
@@ -165,9 +167,9 @@ const security = {
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
   'X-Frame-Options': 'DENY'
 };
-writeFileSync(resolve(root, 'src/security.json'), JSON.stringify(security, null, 2) + '\n');
+if (writeMirror) writeFileSync(resolve(root, 'src/security.json'), JSON.stringify(security, null, 2) + '\n');
 const metaCsp = csp.replace("; frame-ancestors 'none'", '');
-for (const target of [root, dist]) {
+for (const target of targets) {
   for (const page of pages) {
     const file = resolve(target, page.file);
     const content = readFileSync(file, 'utf8').replace('<meta charset="utf-8">', '<meta charset="utf-8">\n  <meta http-equiv="Content-Security-Policy" content="' + html(metaCsp) + '">\n  <meta name="referrer" content="no-referrer">');
@@ -176,7 +178,7 @@ for (const target of [root, dist]) {
 }
 const headers = '/*\n' + Object.entries(security).map(([name, value]) => '  ' + name + ': ' + value).join('\n') + '\n';
 const apache = 'Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\n' + Object.entries(security).map(([name, value]) => 'Header always set ' + name + ' "' + value + '"').join('\n') + '\n</IfModule>\n<IfModule mod_alias.c>\nRedirectMatch 301 ^/preise/?$ /preise.html\nRedirectMatch 301 ^/leistungen/?$ /index.html#leistungen\nRedirectMatch 301 ^/(kontakt|anfahrt)/?$ /index.html#kontakt\nRedirectMatch 301 ^/impressum-datenschutz/?$ /impressum.html\n</IfModule>\n';
-for (const target of [root, dist]) {
+for (const target of targets) {
   writeFileSync(resolve(target, '_headers'), headers);
   writeFileSync(resolve(target, '.htaccess'), apache);
 }
@@ -214,5 +216,5 @@ candidate.pages.push({
     { id: '06f0ef64-0d8f-47bc-91fa-5b9cb5293912', heading: 'Ihren Termin persönlich abstimmen', text: 'Fragen zu einer Leistung oder Ihrem Termin? Marita Imhof ist telefonisch erreichbar.', surface: 'contrast', visualWeight: 'balanced', type: 'contact', variant: 'strong-cta', action: { label: 'Jetzt anrufen', intent: 'contact', pathId: 'phone_main' } }
   ]
 });
-writeFileSync(resolve(root, 'website-candidate.json'), JSON.stringify({ research: pack, candidate }, null, 2) + '\n');
+if (writeMirror) writeFileSync(resolve(root, 'website-candidate.json'), JSON.stringify({ research: pack, candidate }, null, 2) + '\n');
 console.log(JSON.stringify({ built: pages.length, publishedPriceRows: Object.values(groups).flatMap(items => items).reduce((sum, item) => sum + item.items.length, 0), dist }));

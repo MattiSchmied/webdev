@@ -1,0 +1,12 @@
+{
+  "name": "reta-website-collection",
+  "version": "2.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "node showcase/src/build.ts"
+  }
+}

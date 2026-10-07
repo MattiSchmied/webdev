@@ -5,7 +5,7 @@ import { dirname, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { ResearchPack } from './types.ts';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const dist = resolve(root, 'dist');
+const dist = process.env.OUTPUT_DIR ? resolve(process.env.OUTPUT_DIR) : resolve(root, 'dist');
 const read = (file: string) => readFileSync(resolve(dist, file), 'utf8');
 const pages = ['index.html', 'preise.html', 'impressum.html', 'datenschutz.html', '404.html'];
 const siteBasePath = new URL(read('index.html').match(/<link rel="canonical" href="([^"]+)"/)![1]).pathname;

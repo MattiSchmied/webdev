@@ -1,4 +1,4 @@
-name: Deploy Imhof v2 to GitHub Pages
+name: Deploy website collection to GitHub Pages
 
 on:
   push:
@@ -25,18 +25,14 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Build website
-        working-directory: v2
+      - name: Build and check four website previews
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
-        run: node src/build.ts
-      - name: Check pages, prices and original PDFs
-        working-directory: v2
-        run: node src/check.ts
+        run: node showcase/src/build.ts
       - name: Upload public website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: v2/dist
+          path: showcase/dist
 
   deploy:
     needs: build
