@@ -1,15 +1,8 @@
-# Webdev · Website-Kollektion v2.2.0
+# Webdev · RETA Websites & Apps v2.3.0
 
 Live: https://mattischmied.github.io/webdev/
 
-Die Startseite bietet vier direkt erreichbare Vorschauen:
-
-1. `/hairdresser-essential/`: Il Capello · Essential.
-2. `/hairdresser-growth/`: Il Capello · Growth.
-3. `/shk-growth-team/`: Laurenz + Schwaiger · Growth + Team, einschließlich `karriere/`.
-4. `/imhof/`: der bisherige Imhof-Auftritt mit Preisen, Original-PDFs und rechtlichen Unterseiten.
-
-Alle Auftritte enthalten einen Rückweg zur Übersicht. Die bisherigen Imhof-URLs `preise.html`, `impressum.html` und `datenschutz.html` leiten zur passenden Unterseite weiter. Die Kollektion ist eine Konzeptvorschau und mit `noindex,nofollow` sowie einer sperrenden robots.txt gekennzeichnet.
+Die Startseite bietet zwei Bereiche: `/reta/` für Imhof-Websites und Versionen sowie `/apps/` für Sequvia-Downloads. Die aktuelle Imhof-Website liegt unter `/reta/imhof/akt/`; frühere Fassungen können daneben abgelegt werden. Die APK- und IPA-Dateien werden unter `/apps/sequvia/` ergänzt, sobald sie vorliegen. Das Portal ist mit `noindex,nofollow` sowie einer sperrenden robots.txt gekennzeichnet.
 
 ## Build und Veröffentlichung
 
@@ -27,7 +20,7 @@ Der bestehende GitHub-Pages-Workflow baut bei jedem Push auf `main` und veröffe
 
 - `v1/`: erhaltene frühere Repository-Dateien, einschließlich `outputs/Imhof/`.
 - `v2/`: Imhof-Quellen und eigenständig weiterhin nutzbarer Build. Der Kollektion-Build verwendet `OUTPUT_DIR` und `WRITE_MIRROR=false`, um die bisherigen generierten Dateien unverändert zu lassen.
-- `showcase/src/`: responsive Auswahlseite und TypeScript-Build.
+- `showcase/src/`: responsive RETA-Auswahlseite und TypeScript-Build.
 - `showcase/assets/`: lokale Vorschaubilder, Schriften mit Lizenzen und Styles.
 - `showcase/sites/`: eingefrorene öffentliche Ausgaben der drei neuen Konzepte aus reta-platform v0.4.0, Commit `3189037027ff4d437e06d9d5dcda5b70ee4a6597`.
 

@@ -5,3 +5,15 @@
 @media(max-width:900px){.intro{gap:7%;padding-block:66px}.intro-copy{font-size:13px}.grid{gap:40px 24px}.preview{padding:16px 16px 0}h3{font-size:21px}h3 span{margin:8px 0 0;display:table}.screen{aspect-ratio:1.4}}
 @media(max-width:600px){.masthead,main,footer{width:89%}.masthead{padding-block:23px}.brand{font-size:32px}.edition{display:none}.intro{grid-template-columns:1fr;gap:28px;padding:52px 0 40px}.intro .eyebrow{font-size:9px;margin-bottom:20px}h1{font-size:clamp(43px,11vw,64px)}.intro-copy{max-width:440px;font-size:13px}.quality{font-size:11px;margin-top:18px;padding-top:16px}.grid{grid-template-columns:1fr;gap:38px}.preview{padding:18px 18px 0}.screen{aspect-ratio:1.6}.card-meta{padding-top:17px}h3{font-size:24px}h3 span{display:inline-block;margin:0 0 0 7px}.description{font-size:12px}.note{grid-template-columns:1fr;gap:15px;margin-block:44px}.note p{font-size:11px}footer{flex-wrap:wrap;gap:16px}footer p{margin-left:auto}footer>span{width:100%;text-align:right}.open{width:40px;height:40px}.action{min-height:44px;margin-top:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.screen img,.open{transition:none}.card:hover .screen img,.card:hover .open{transform:none}}
+:root{--paper:#F6F7F3;--ink:#151916;--muted:#526056;--line:#D4DCD3;--green:#DCE5D5;--accent:#4B5D47}
+.intro h1 em{font-family:Manrope,Arial,sans-serif;color:#4B5D47;font-weight:550}
+.dot{background:#4B5D47}
+.preview{border-radius:24px;background:var(--green)}
+.growth .preview,.trade .preview,.capello .preview{background:var(--green)}
+.imhof .preview{background:#E9EEE8}
+.browser{background:#F6F7F3;border-color:#D4DCD380;color:#526056;border-radius:12px 12px 0 0}
+.screen,.screen.app-preview{background:#F6F7F3}
+.app-preview{display:grid;place-items:center;background:linear-gradient(145deg,#E9EEE8,#DCE5D5)!important;color:#4B5D47}
+.app-preview span{display:grid;place-items:center;width:clamp(80px,14vw,160px);aspect-ratio:1;border-radius:28%;background:#F6F7F3;box-shadow:0 24px 60px #15191618;font-size:clamp(48px,8vw,90px);font-weight:750;letter-spacing:-.09em}
+.open{background:#151916}
+@media(max-width:600px){.app-preview span{width:108px}}
