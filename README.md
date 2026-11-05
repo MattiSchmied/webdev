@@ -1,31 +1,17 @@
-# Webdev · RETA Websites & Apps v2.3.0
+# WebDev · Webseiten & Apps v2.4.0
 
-Live: https://mattischmied.github.io/webdev/
+Das Portal bündelt zwei Bereiche: **Webseiten → Reta → Friseur Imhof → Versionen** und **Apps → Sequvia → Downloads**. Die aktuelle Imhof-Fassung (v2) steht vor dem Archiv (v1). Die frühere Fassung stammt aus `v1/outputs/Imhof`; ein nicht im Repository vorhandenes Bild wird in der generierten Vorschau durch das vorhandene Porträt ersetzt. Die Quelldateien bleiben unverändert.
 
-Die Startseite bietet zwei Bereiche: `/reta/` für Imhof-Websites und Versionen sowie `/apps/` für Sequvia-Downloads. Die aktuelle Imhof-Website liegt unter `/reta/imhof/akt/`; frühere Fassungen können daneben abgelegt werden. Die APK- und IPA-Dateien werden unter `/apps/sequvia/` ergänzt, sobald sie vorliegen. Das Portal ist mit `noindex,nofollow` sowie einer sperrenden robots.txt gekennzeichnet.
+Die Sequvia-Seite kennzeichnet Android (APK als ZIP) und iOS (IPA als ZIP) als noch nicht verfügbar. Sobald die Dateien vorliegen, müssen sie eingebunden und die Hinweise durch funktionierende Download-Links ersetzt werden.
 
-## Build und Veröffentlichung
+## Build
 
-Node.js 24 genügt. Es sind keine zusätzlichen Laufzeitabhängigkeiten erforderlich.
+Node.js 24 ist erforderlich; zusätzliche Abhängigkeiten sind nicht nötig:
 
 ```sh
 node showcase/src/build.ts
 ```
 
-Der Build erstellt ausschließlich öffentliche Dateien in `showcase/dist/`, baut Imhof aus den vorhandenen Quellen und prüft die vier Auftritte, lokale Links, Anker, die 50 Preispositionen und Original-PDF-Prüfsummen. Mit `SITE_URL` kann eine andere HTTPS-Veröffentlichungsadresse gesetzt werden; alle Unterordner berücksichtigen deren Pfadpräfix.
+Der Build schreibt nach `showcase/dist/`, baut und prüft die aktuelle Imhof-Fassung, kopiert die archivierte Fassung und prüft lokale Links. Mit `SITE_URL` kann die HTTPS-Basisadresse einschließlich Pfadpräfix angepasst werden. Der bestehende GitHub-Pages-Workflow veröffentlicht das Ergebnis nach einem Push auf `main`. Das Portal ist mit `noindex,nofollow` und einer sperrenden robots.txt versehen.
 
-Der bestehende GitHub-Pages-Workflow baut bei jedem Push auf `main` und veröffentlicht ausschließlich `showcase/dist/`. Recherche, Prompts, Build-Metadaten und TypeScript-Quellen gelangen nicht in das Pages-Artefakt.
-
-## Struktur und Herkunft
-
-- `v1/`: erhaltene frühere Repository-Dateien, einschließlich `outputs/Imhof/`.
-- `v2/`: Imhof-Quellen und eigenständig weiterhin nutzbarer Build. Der Kollektion-Build verwendet `OUTPUT_DIR` und `WRITE_MIRROR=false`, um die bisherigen generierten Dateien unverändert zu lassen.
-- `showcase/src/`: responsive RETA-Auswahlseite und TypeScript-Build.
-- `showcase/assets/`: lokale Vorschaubilder, Schriften mit Lizenzen und Styles.
-- `showcase/sites/`: eingefrorene öffentliche Ausgaben der drei neuen Konzepte aus reta-platform v0.4.0, Commit `3189037027ff4d437e06d9d5dcda5b70ee4a6597`.
-
-Die drei neuen Auftritte sind handgeschriebene Validierungskonzepte für echte Betriebe, keine Modellresultate und keine freigegebenen Kundenwebsites. Sie verwenden vorhandene Recherche-Snapshots; Angaben können veraltet sein. Die Veröffentlichung als Vorschau wurde ausdrücklich beauftragt. Sie ersetzt keine Freigabe im Reta-Publikationsprozess.
-
-Gestaltungsanspruch für die Auswahl und weitere Arbeit: hochmoderne Websites, perfekte UI, UX und Marketing sowie absolute Premiumqualität. Dieses Qualitätsziel ist keine Behauptung einer abgeschlossenen Kundenfreigabe.
-
-Imhof behält Original-Logo, Original-Porträt, gekennzeichnete KI-Stilillustration und Original-Preis-PDFs. Quellen und Prüfsummen stehen in `v2/research/`. Alle Schriften und Bilder werden lokal ausgeliefert. Google Maps wird in den vorhandenen Auftritten erst nach Zustimmung geladen. Es gibt keine Analyse- oder Werbeskripte auf der Auswahlseite.
+`v1/` und `v2/` enthalten die ursprünglichen Fassungen. Der Build verändert sie nicht. Bestehende Imhof-Unterseiten-URLs werden auf die aktuelle Version weitergeleitet.
