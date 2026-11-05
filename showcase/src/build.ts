@@ -30,13 +30,30 @@ const row = (href: string, number: string, title: string, desc: string, tag: str
 const section = (label: string, content: string) => `<section class="choices" aria-label="${label}"><div class="section-heading"><h2>${label}</h2><span>Auswählen &amp; öffnen</span></div><div class="choice-list">${content}</div></section>`;
 const home = `<a href="${base}">WebDev</a>`;
 const page = (title: string, eyebrow: string, heading: string, intro: string, body: string, crumb: string) => `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f4f6f4"><title>${title} · WebDev</title><link rel="icon" href="${base}assets/webdev.svg" type="image/svg+xml"><link rel="stylesheet" href="${base}assets/portal.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt springen</a><header class="header"><a class="brand" href="${base}" aria-label="WebDev Startseite"><img src="${base}assets/webdev.svg" alt=""><span>WebDev<span class="brand-dot">.</span></span></a><nav aria-label="Hauptnavigation"><a href="${base}reta/">Webseiten</a><a href="${base}apps/">Apps</a></nav></header><main id="inhalt"><div class="wrap"><div class="breadcrumb">${crumb}</div><section class="intro"><div><p class="eyebrow"><span></span>${eyebrow}</p><h1>${heading}</h1></div><p class="intro-text">${intro}</p></section>${body}</div></main><footer><div class="wrap footer-inner"><a class="brand footer-brand" href="${base}"><img src="${base}assets/webdev.svg" alt=""><span>WebDev<span class="brand-dot">.</span></span></a><span>Webseiten & Apps</span><a href="${base}">Zur Übersicht ↑</a></div></footer></body></html>`;
-const downloads = `<section class="choices" aria-label="Downloads"><div class="section-heading"><h2>Downloads</h2><span>In Vorbereitung</span></div><div class="choice-list"><div class="choice unavailable"><span class="choice-number">01</span><span class="choice-copy"><strong>Android</strong><span>APK im ZIP-Archiv</span></span><span class="choice-tag">Folgt</span><span class="download-icon" aria-hidden="true">↓</span></div><div class="choice unavailable"><span class="choice-number">02</span><span class="choice-copy"><strong>iPhone &amp; iPad</strong><span>IPA im ZIP-Archiv</span></span><span class="choice-tag">Folgt</span><span class="download-icon" aria-hidden="true">↓</span></div></div><p class="note">Die Downloads sind noch nicht verfügbar.</p></section>`;
+const downloads = `<section class="choices" aria-label="Downloads">
+  <div class="section-heading"><h2>Downloads</h2><span>Android &amp; iOS</span></div>
+  <div class="choice-list">
+    <a class="choice" href="https://github.com/MattiSchmied/webdev/releases/download/sequvia-v1.0.0/Sequvia_apk.zip" aria-label="Sequvia APK als ZIP für Android herunterladen">
+      <span class="choice-number">01</span>
+      <span class="choice-copy"><strong>Android</strong><span>APK als ZIP herunterladen</span></span>
+      <span class="choice-tag">APK laden</span>
+      <span class="arrow" aria-hidden="true">↓</span>
+    </a>
+    <a class="choice" href="https://github.com/MattiSchmied/webdev/releases/download/sequvia-v1.0.0/Sequvia_ipa.zip" aria-label="Sequvia IPA als ZIP für iPhone und iPad herunterladen">
+      <span class="choice-number">02</span>
+      <span class="choice-copy"><strong>iPhone &amp; iPad</strong><span>IPA als ZIP herunterladen</span></span>
+      <span class="choice-tag">IPA laden</span>
+      <span class="arrow" aria-hidden="true">↓</span>
+    </a>
+  </div>
+  <p class="note">Android: ZIP entpacken und die APK installieren. iOS: Die IPA kann heruntergeladen werden; die Installation erfordert eine gültig signierte App und einen unterstützten Installationsweg.</p>
+</section>`;
 const pages: [string, string][] = [
  ['index.html', page('Startseite', 'WebDev / Übersicht', 'Digitale Projekte.<br><span>Ein guter Anfang.</span>', 'Webseiten und Apps an einem Ort. Wähle einen Bereich, um die Projekte zu entdecken.', section('Bereiche', row('reta/', '01', 'Webseiten', 'Projekte und ihre verschiedenen Versionen ansehen.', 'Reta') + row('apps/', '02', 'Apps', 'Apps entdecken und Downloads finden.', 'Sequvia')), 'Übersicht')],
  ['reta/index.html', page('Webseiten', 'Webseiten / Reta', 'Webseiten<br><span>von Reta.</span>', 'Hier findest du die Webseitenprojekte und ihre verfügbaren Fassungen.', section('Projekte', row('reta/imhof/', '01', 'Friseur Imhof', 'Die aktuelle Webseite und eine frühere Version.', '2 Versionen')), `${home}<span>/</span>Webseiten`)],
  ['reta/imhof/index.html', page('Friseur Imhof', 'Reta / Webseiten', 'Friseur Imhof.<br><span>Alle Versionen.</span>', 'Wähle eine Fassung aus. Die aktuelle Version steht an erster Stelle.', section('Versionen', row('reta/imhof/akt/', '02', 'Aktuelle Version', 'Die neueste Fassung der Webseite.', 'Aktuell · v2') + row('reta/imhof/v1/', '01', 'Version 1', 'Die frühere Fassung aus dem Archiv.', 'Archiv · v1')), `${home}<span>/</span><a href="${base}reta/">Webseiten</a><span>/</span>Imhof`)],
  ['apps/index.html', page('Apps', 'WebDev / Apps', 'Apps.<br><span>Alles an einem Ort.</span>', 'Wähle eine App, um zu ihren Downloads zu gelangen.', section('Apps', row('apps/sequvia/', '01', 'Sequvia', 'Downloads für Android und iOS.', 'App')), `${home}<span>/</span>Apps`)],
- ['apps/sequvia/index.html', page('Sequvia', 'Apps / Sequvia', 'Sequvia.<br><span>Für dein Gerät.</span>', 'Die Installationsdateien werden hier als ZIP bereitgestellt, sobald sie verfügbar sind.', downloads, `${home}<span>/</span><a href="${base}apps/">Apps</a><span>/</span>Sequvia`)]
+ ['apps/sequvia/index.html', page('Sequvia', 'Apps / Sequvia', 'Sequvia.<br><span>Für dein Gerät.</span>', 'Lade die aktuelle Sequvia-Version für Android oder iOS herunter.', downloads, `${home}<span>/</span><a href="${base}apps/">Apps</a><span>/</span>Sequvia`)]
 ];
 for (const [path, html] of pages) { const target = resolve(dist, path); mkdirSync(dirname(target), { recursive: true }); writeFileSync(target, html); }
 for (const old of ['preise.html', 'impressum.html', 'datenschutz.html']) { const target = new URL(current + old, url).href.replaceAll('&', '&amp;').replaceAll('"', '&quot;'); writeFileSync(resolve(dist, old), `<!doctype html><html lang="de"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url=${target}"><title>Friseur Imhof</title><a href="${target}">Weiter zu Friseur Imhof</a></html>`); }
