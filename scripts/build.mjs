@@ -72,7 +72,6 @@ for (const font of ['manrope-variable.ttf', 'OFL.txt']) {
   mkdirSync(dirname(resolve(dist, target)), { recursive: true });
   copy(resolve(imhof, 'assets/fonts', font), target);
 }
-for (const route of downloads) copy(resolve(repo, route), route);
 for (const [route, html] of renderPages(base, packagesSizes)) write(route.endsWith('.html') ? route : route + 'index.html', html);
 write('.nojekyll', '');
 write('robots.txt', 'User-agent: *\nDisallow: /\n');

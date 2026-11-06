@@ -29,7 +29,7 @@ Nur `dist/` wird veröffentlicht. Der GitHub-Pages-Workflow baut bei Änderungen
 ## Inhalte ergänzen
 
 - Neue Apps kommen mit Icon, Kurzbeschreibung und Download-Dateien in den gemeinsamen Katalog unter `portal/apps.mjs`.
-- ZIP-Dateien liegen pro App unter `apps/<name>/downloads/`. Der Build ermittelt die Dateigrößen und kopiert alle eingetragenen Downloads in die Website.
+- ZIP-Dateien liegen pro App unter `apps/<name>/downloads/`. Die Downloadseiten verlinken direkt auf diese Dateien in GitHub; die Archive werden nicht in das Pages-Artefakt kopiert. So bleibt die Website-Veröffentlichung klein und Downloads können direkt bedient werden.
 - Android-Downloads enthalten eine APK. iOS-Downloads enthalten eine IPA und benötigen einen geeigneten Installationsweg; iOS installiert sie nicht direkt aus dem Browser.
 - Gestaltung und gemeinsame Portal-Assets liegen unter `portal/assets/`.
 - Die Imhof-Versionsleiste bleibt in beiden Fassungen verfügbar und standardmäßig ausgeblendet. Frühere Versionen bleiben im Archiv.

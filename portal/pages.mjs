@@ -1,4 +1,4 @@
-import { apps, appRoute } from './apps.mjs';
+import { apps, appRoute, downloadUrl } from './apps.mjs';
 
 const icons = {
   web: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18m-12 4-2 2 2 2m6-4 2 2-2 2"/>',
@@ -23,7 +23,8 @@ export function renderPages(base, sizes) {
   const badge = (symbol, tone = 'blue') => `<span class="tile ${tone}">${icon(symbol)}</span>`;
   const brand = `<a class="brand" href="${path('')}" aria-label="WebDev Startseite">${asset('webdev-mark.png')}<span>WebDev</span></a>`;
   function row({ route, label, description, mark, meta, action = 'next', download }) {
-    return `<li><a class="row" href="${path(route)}"${download ? ` download="${escape(download)}"` : ''}>
+    const href = route.startsWith('https://') ? escape(route) : path(route);
+    return `<li><a class="row" href="${href}"${download && !route.startsWith('https://') ? ` download="${escape(download)}"` : ''}>
       ${mark}<span class="row-text"><strong>${escape(label)}</strong><span>${escape(description)}</span></span>
       ${meta ? `<span class="row-meta">${escape(meta)}</span>` : ''}<span class="row-action">${icon(action)}</span>
     </a></li>`;
@@ -79,7 +80,7 @@ export function renderPages(base, sizes) {
     const rows = app.downloads.map(({ platform, format, file, symbol }) => {
       const downloadRoute = route + 'downloads/' + file;
       return {
-        route: downloadRoute, label: platform, description: format + ' als ZIP herunterladen',
+        route: downloadUrl(downloadRoute), label: platform, description: format + ' als ZIP herunterladen',
         mark: badge(symbol, format === 'APK' ? 'blue' : 'neutral'),
         meta: megabytes.format(sizes.get(downloadRoute) / 1e6) + ' MB',
         action: 'download', download: file,

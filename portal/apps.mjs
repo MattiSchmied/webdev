@@ -29,6 +29,7 @@ export const apps = [
 ];
 
 export const appRoute = app => 'apps/' + app.slug + '/';
+export const downloadUrl = route => 'https://raw.githubusercontent.com/MattiSchmied/webdev/main/' + route;
 export const downloads = apps.flatMap(app =>
   app.downloads.map(({ file }) => appRoute(app) + 'downloads/' + file),
 );
