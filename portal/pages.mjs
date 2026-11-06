@@ -80,16 +80,16 @@ export function renderPages(base, sizes) {
 </html>`;
   }
   return new Map([
-    ['', page({ title: 'WebDev', eyebrow: 'Übersicht', intro: 'Webseiten ansehen und Apps herunterladen.',
+    ['', page({ title: 'WebDev', eyebrow: 'Übersicht', intro: 'Hier zeige ich Webseiten, die ich erstellt habe, und stelle meine Apps zum Download bereit.',
       content: group('Bereiche', '', [
-        { route: routes.reta, label: 'Webseiten', description: 'Webauftritte und ihre Versionen entdecken', mark: badge('web'), meta: 'Reta' },
-        { route: routes.apps, label: 'Apps', description: 'Apps und ihre Downloads finden', mark: badge('apps', 'sage') },
+        { route: routes.reta, label: 'Webseiten', description: 'Vorschauen und frühere Versionen ansehen', mark: badge('web'), meta: 'Reta' },
+        { route: routes.apps, label: 'Apps', description: 'Apps für dein Gerät herunterladen', mark: badge('apps', 'sage') },
       ]) })],
-    [routes.reta, page({ title: 'Reta', area: 'reta', eyebrow: 'Webseiten', intro: 'Hier findest du die Webseiten von Reta. Bei Projekten mit mehreren Fassungen kannst du die gewünschte Version auswählen.', parent: ['', 'Übersicht'],
+    [routes.reta, page({ title: 'Reta', area: 'reta', eyebrow: 'Webseiten', intro: 'Hier kannst du dir die Webseiten ansehen, die ich unter Reta erstellt habe. Sind mehrere Fassungen verfügbar, kannst du sie einzeln öffnen.', parent: ['', 'Übersicht'],
       content: group('Webseiten', '', projects) })],
     [routes.imhof, page({ title: 'Friseur Imhof', area: 'reta', eyebrow: 'Reta · Webseiten', intro: 'Wähle die aktuelle Website oder eine frühere Fassung.', mark: asset('imhof.svg', 'project-mark'), parent: [routes.reta, 'Webseiten'],
       content: group('Versionen', 'Neueste zuerst', versions) })],
-    [routes.apps, page({ title: 'Apps', area: 'apps', eyebrow: 'WebDev', intro: 'Wähle eine App, um zu ihren Downloads zu gelangen.', parent: ['', 'Übersicht'],
+    [routes.apps, page({ title: 'Apps', area: 'apps', eyebrow: 'WebDev', intro: 'Hier findest du meine Apps und ihre Installationsdateien.', parent: ['', 'Übersicht'],
       content: group('Verfügbare Apps', '', apps) })],
     [routes.sequvia, page({ title: 'Sequvia', area: 'apps', eyebrow: 'Apps · Downloads', intro: 'Wähle die passende ZIP-Datei für dein Gerät.', parent: [routes.apps, 'Apps'],
       content: group('Downloads', 'Android &amp; iOS', downloads) + `<section class="help"><h2>Nach dem Download</h2>
