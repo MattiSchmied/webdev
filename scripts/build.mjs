@@ -2,7 +2,8 @@ import { cpSync, existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, re
 import { dirname, extname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { packages, renderPages, routes } from '../portal/pages.mjs';
+import { downloads } from '../portal/apps.mjs';
+import { renderPages, routes } from '../portal/pages.mjs';
 
 const repo = realpathSync(fileURLToPath(new URL('../', import.meta.url)));
 const dist = resolve(repo, 'dist');
@@ -11,14 +12,12 @@ if (site.protocol !== 'https:' || site.username || site.password || site.search 
 if (!site.pathname.endsWith('/')) site.pathname += '/';
 const base = site.pathname;
 const imhof = resolve(repo, 'sites/imhof/current');
-const downloads = resolve(repo, 'apps/sequvia/downloads');
-
-const packagesSizes = packages.map(({ file }) => {
-  const source = resolve(downloads, file);
+const packagesSizes = new Map(downloads.map(route => {
+  const source = resolve(repo, route);
   const info = statSync(source);
   if (!info.isFile() || info.size < 22) throw new Error('Invalid download: ' + source);
-  return info.size;
-});
+  return [route, info.size];
+}));
 
 if (dirname(dist) !== repo || (existsSync(dist) && (lstatSync(dist).isSymbolicLink() || realpathSync(dist) !== dist))) {
   throw new Error('Refusing to replace an output directory outside the repository.');
@@ -73,7 +72,7 @@ for (const font of ['manrope-variable.ttf', 'OFL.txt']) {
   mkdirSync(dirname(resolve(dist, target)), { recursive: true });
   copy(resolve(imhof, 'assets/fonts', font), target);
 }
-for (const { file } of packages) copy(resolve(downloads, file), routes.sequvia + 'downloads/' + file);
+for (const route of downloads) copy(resolve(repo, route), route);
 for (const [route, html] of renderPages(base, packagesSizes)) write(route.endsWith('.html') ? route : route + 'index.html', html);
 write('.nojekyll', '');
 write('robots.txt', 'User-agent: *\nDisallow: /\n');

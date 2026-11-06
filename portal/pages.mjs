@@ -1,3 +1,5 @@
+import { apps, appRoute } from './apps.mjs';
+
 const icons = {
   web: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18m-12 4-2 2 2 2m6-4 2 2-2 2"/>',
   apps: '<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/>',
@@ -13,13 +15,8 @@ const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '
 export const routes = {
   reta: 'reta/', imhof: 'reta/imhof/', current: 'reta/imhof/akt/',
   archive: 'reta/imhof/v1/', capello: 'reta/il-capello/',
-  apps: 'apps/', sequvia: 'apps/sequvia/',
+  apps: 'apps/',
 };
-export const packages = [
-  { name: 'Android', type: 'APK', file: 'Sequvia_apk.zip', symbol: 'android' },
-  { name: 'iPhone & iPad', type: 'IPA', file: 'Sequvia_ipa.zip', symbol: 'apps' },
-];
-
 export function renderPages(base, sizes) {
   const path = route => escape(base + route);
   const asset = (file, cls = '', prefix = 'assets/') => `<img class="${cls}" src="${path(prefix + file)}" alt="" width="48" height="48">`;
@@ -32,7 +29,10 @@ export function renderPages(base, sizes) {
     </a></li>`;
   }
   const group = (label, hint, rows) => `<section class="group"><div class="group-heading"><h2>${label}</h2>${hint ? `<span>${hint}</span>` : ''}</div><ul class="rows">${rows.map(row).join('')}</ul></section>`;
-  const apps = [{ route: routes.sequvia, label: 'Sequvia', description: 'App für Android und iOS', mark: asset('sequvia.svg', 'tile app-logo'), meta: 'Downloads' }];
+  const appRows = apps.map(app => ({
+    route: appRoute(app), label: app.name, description: app.description,
+    mark: asset(app.icon, 'tile app-logo'),
+  }));
   const versions = [
     { route: routes.current, label: 'Version 2', description: 'Aktuelle Website mit Leistungen, Preisen und Kontakt', mark: badge('web'), meta: 'Aktuell', action: 'open' },
     { route: routes.archive, label: 'Version 1', description: 'Erste veröffentlichte Fassung', mark: badge('history', 'neutral'), meta: 'Archiv', action: 'open' },
@@ -41,12 +41,6 @@ export function renderPages(base, sizes) {
     { route: routes.imhof, label: 'Friseur Imhof', description: 'Website und frühere Fassungen', mark: asset('imhof-logo.png', 'tile app-logo', routes.current + 'assets/'), meta: versions.length === 1 ? '1 Version' : versions.length + ' Versionen' },
     { route: routes.capello, label: 'Il Capello', description: 'Salon, Team, Leistungen und Kontakt', mark: asset('icon.svg', 'tile app-logo', routes.capello + 'assets/'), action: 'open' },
   ];
-  const downloads = packages.map((item, index) => ({
-    route: routes.sequvia + 'downloads/' + item.file, label: item.name,
-    description: item.type + ' als ZIP herunterladen', mark: badge(item.symbol, index ? 'neutral' : 'blue'),
-    meta: new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(sizes[index] / 1e6) + ' MB',
-    action: 'download', download: item.file,
-  }));
   function page({ title, area, eyebrow, intro, content, parent, mark = '' }) {
     return `<!doctype html>
 <html lang="de">
@@ -79,6 +73,31 @@ export function renderPages(base, sizes) {
 </body>
 </html>`;
   }
+  const megabytes = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
+  const appPages = apps.map(app => {
+    const route = appRoute(app);
+    const rows = app.downloads.map(({ platform, format, file, symbol }) => {
+      const downloadRoute = route + 'downloads/' + file;
+      return {
+        route: downloadRoute, label: platform, description: format + ' als ZIP herunterladen',
+        mark: badge(symbol, format === 'APK' ? 'blue' : 'neutral'),
+        meta: megabytes.format(sizes.get(downloadRoute) / 1e6) + ' MB',
+        action: 'download', download: file,
+      };
+    });
+    const instructions = [];
+    if (app.downloads.some(({ format }) => format === 'APK')) {
+      instructions.push('<details><summary>Android: APK installieren</summary><p>Entpacke das ZIP, öffne die APK auf deinem Android-Gerät und folge den Hinweisen deines Geräts.</p></details>');
+    }
+    if (app.downloads.some(({ format }) => format === 'IPA')) {
+      instructions.push('<details><summary>iPhone und iPad: IPA verwenden</summary><p>Entpacke das ZIP. Für die IPA brauchst du einen geeigneten Installationsweg, zum Beispiel SideStore. Die Datei lässt sich unter iOS nicht direkt aus dem Browser installieren.</p></details>');
+    }
+    return [route, page({
+      title: app.name, area: 'apps', eyebrow: 'Apps · Downloads', intro: app.description,
+      mark: asset(app.icon, 'project-mark'), parent: [routes.apps, 'Apps'],
+      content: group('Downloads', '', rows) + '<section class="help"><h2>Nach dem Download</h2>' + instructions.join('') + '</section>',
+    })];
+  });
   return new Map([
     ['', page({ title: 'WebDev', eyebrow: 'Übersicht', intro: 'Webseiten als Vorschau und Apps zum Download.',
       content: group('Bereiche', '', [
@@ -90,12 +109,8 @@ export function renderPages(base, sizes) {
     [routes.imhof, page({ title: 'Friseur Imhof', area: 'reta', eyebrow: 'Reta · Webseiten', intro: 'Wähle die aktuelle Website oder eine frühere Fassung.', mark: asset('imhof-logo.png', 'project-mark', routes.current + 'assets/'), parent: [routes.reta, 'Webseiten'],
       content: group('Versionen', 'Neueste zuerst', versions) })],
     [routes.apps, page({ title: 'Apps', area: 'apps', eyebrow: 'WebDev', intro: 'Apps und Installationsdateien für dein Gerät.', parent: ['', 'Übersicht'],
-      content: group('Verfügbare Apps', '', apps) })],
-    [routes.sequvia, page({ title: 'Sequvia', area: 'apps', eyebrow: 'Apps · Downloads', intro: 'Wähle die passende ZIP-Datei für dein Gerät.', parent: [routes.apps, 'Apps'],
-      content: group('Downloads', 'Android &amp; iOS', downloads) + `<section class="help"><h2>Nach dem Download</h2>
-        <details><summary>Android: APK installieren</summary><p>Entpacke das ZIP, öffne die APK auf deinem Android-Gerät und folge den Hinweisen deines Geräts.</p></details>
-        <details><summary>iPhone und iPad: IPA verwenden</summary><p>Entpacke das ZIP. Für die IPA brauchst du einen geeigneten Installationsweg, zum Beispiel SideStore. Die Datei lässt sich unter iOS nicht direkt aus dem Browser installieren.</p></details>
-      </section>` })],
+      content: group('Verfügbare Apps', '', appRows) })],
+    ...appPages,
     ['404.html', page({ title: 'Seite nicht gefunden', eyebrow: '404', intro: 'Die Seite ist unter dieser Adresse nicht verfügbar.', parent: ['', 'Zur Übersicht'], content: '' })],
   ]);
 }

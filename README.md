@@ -1,32 +1,37 @@
 # WebDev
 
-[Website öffnen](https://mattischmied.github.io/webdev/) · [Reta-Webseiten](https://mattischmied.github.io/webdev/reta/) · [Sequvia herunterladen](https://mattischmied.github.io/webdev/apps/sequvia/)
+[Portal öffnen](https://mattischmied.github.io/webdev/)
 
-WebDev ist der Einstieg zu den Salon-Websites von Reta und zu den Installationsdateien von Sequvia.
+WebDev bündelt Webseiten als Vorschau und Apps mit ihren Installationsdateien.
 
-| Ordner | Inhalt |
+## Aufbau
+
+| Pfad | Inhalt |
 | --- | --- |
-| `portal/` | Startseite, Projektübersicht, Versionsauswahl und Downloadseite. |
-| `sites/imhof/current/` | Quellen der aktuellen Imhof-Fassung mit Vorlagen, Bildern, Original-PDFs und Recherche. |
-| `sites/imhof/archive/` | Statische erste Imhof-Fassung. |
-| `sites/il-capello/` | Statischer Desktop-Export vom 5. November 2026, einschließlich Leistungen, Team, Kontakt und Rechtstexten. |
-| `apps/sequvia/downloads/` | Die beiden ausgelieferten ZIP-Dateien für Android und iOS. |
-| `scripts/` | Baut und prüft die Website; stellt eine lokale Vorschau bereit. |
+| `portal/` | Übersichtsseiten, App-Katalog, Gestaltung und Logos. |
+| `sites/imhof/current/` | Aktuelle Imhof-Fassung mit Vorlagen und Originalmaterial. |
+| `sites/imhof/archive/` | Erste veröffentlichte Imhof-Fassung. |
+| `sites/il-capello/` | Statischer Webauftritt von Il Capello. |
+| `apps/<name>/downloads/` | ZIP-Dateien mit Android- und iOS-Installationsdateien der jeweiligen App. |
+| `scripts/` | Baut, prüft und zeigt die Website lokal an. |
 
 ## Lokal öffnen
 
-Mit Node.js 24, ohne zusätzliche Abhängigkeiten:
+Benötigt Node.js 24 oder neuer. Zusätzliche Pakete sind nicht erforderlich.
 
 ```sh
 npm run build
 npm run preview
 ```
 
-Die Vorschau gibt ihre URL im Terminal aus. `SITE_URL` legt bei Bedarf eine abweichende HTTPS-Basisadresse fest und muss für Build und Vorschau gleich gesetzt sein. Nur `dist/` wird veröffentlicht. Der GitHub-Pages-Workflow baut bei Pushes auf `main` und prüft lokale Verweise sowie die aktuellen Imhof-Preise und Original-PDFs.
+Nur `dist/` wird veröffentlicht. Der GitHub-Pages-Workflow baut bei Änderungen auf `main` und prüft interne Links sowie Inhalte der aktuellen Imhof-Website.
 
-## Inhalte pflegen
+## Inhalte ergänzen
 
-- Navigation und Einträge stehen in `portal/pages.mjs`, Gestaltung und Logos in `portal/assets/`.
-- Die beiden Sequvia-ZIPs liegen im selben Projekt wie ihre Downloadseite. Neue Dateien an derselben Stelle ersetzen; die angezeigte Dateigröße wird beim Build ermittelt. Eine IPA im ZIP bedeutet keine Direktinstallation unter iOS.
-- Die Imhof-Versionsleiste ist in beiden Fassungen über `portal/assets/navigation.css` ausgeblendet. Für die aktuelle Imhof-Fassung werden die HTML-Dateien aus den Vorlagen gebaut. In der Archivfassung ersetzt der Build ein fehlendes Bild durch das mitgelieferte Porträt.
-- Frühere ungenutzte Entwürfe und doppelte Build-Ausgaben bleiben in der Git-Historie auffindbar.
+- Neue Apps kommen mit Icon, Kurzbeschreibung und Download-Dateien in den gemeinsamen Katalog unter `portal/apps.mjs`.
+- ZIP-Dateien liegen pro App unter `apps/<name>/downloads/`. Der Build ermittelt die Dateigrößen und kopiert alle eingetragenen Downloads in die Website.
+- Android-Downloads enthalten eine APK. iOS-Downloads enthalten eine IPA und benötigen einen geeigneten Installationsweg; iOS installiert sie nicht direkt aus dem Browser.
+- Gestaltung und gemeinsame Portal-Assets liegen unter `portal/assets/`.
+- Die Imhof-Versionsleiste bleibt in beiden Fassungen verfügbar und standardmäßig ausgeblendet. Frühere Versionen bleiben im Archiv.
+
+Frühere, nicht verwendete Entwürfe und Build-Ausgaben sind weiterhin in der Git-Historie zu finden.
