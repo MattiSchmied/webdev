@@ -24,7 +24,7 @@ export function renderPages(base, sizes) {
   const path = route => escape(base + route);
   const asset = (file, cls = '', prefix = 'assets/') => `<img class="${cls}" src="${path(prefix + file)}" alt="" width="48" height="48">`;
   const badge = (symbol, tone = 'blue') => `<span class="tile ${tone}">${icon(symbol)}</span>`;
-  const brand = `<a class="brand" href="${path('')}" aria-label="WebDev Startseite">${asset('webdev.svg')}<span>WebDev</span></a>`;
+  const brand = `<a class="brand" href="${path('')}" aria-label="WebDev Startseite">${asset('webdev-mark.png')}<span>WebDev</span></a>`;
   function row({ route, label, description, mark, meta, action = 'next', download }) {
     return `<li><a class="row" href="${path(route)}"${download ? ` download="${escape(download)}"` : ''}>
       ${mark}<span class="row-text"><strong>${escape(label)}</strong><span>${escape(description)}</span></span>
@@ -38,7 +38,7 @@ export function renderPages(base, sizes) {
     { route: routes.archive, label: 'Version 1', description: 'Erste veröffentlichte Fassung', mark: badge('history', 'neutral'), meta: 'Archiv', action: 'open' },
   ];
   const projects = [
-    { route: routes.imhof, label: 'Friseur Imhof', description: 'Website und frühere Fassungen', mark: asset('imhof.svg', 'tile app-logo'), meta: versions.length === 1 ? '1 Version' : versions.length + ' Versionen' },
+    { route: routes.imhof, label: 'Friseur Imhof', description: 'Website und frühere Fassungen', mark: asset('imhof-logo.png', 'tile app-logo', routes.current + 'assets/'), meta: versions.length === 1 ? '1 Version' : versions.length + ' Versionen' },
     { route: routes.capello, label: 'Il Capello', description: 'Salon, Team, Leistungen und Kontakt', mark: asset('icon.svg', 'tile app-logo', routes.capello + 'assets/'), action: 'open' },
   ];
   const downloads = packages.map((item, index) => ({
@@ -55,7 +55,7 @@ export function renderPages(base, sizes) {
   <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f1f6fa">
   <meta name="description" content="${escape(intro)}">
   <title>${title === 'WebDev' ? 'WebDev · Webseiten und Apps' : escape(title) + ' · WebDev'}</title>
-  <link rel="icon" href="${path('assets/webdev.svg')}" type="image/svg+xml">
+  <link rel="icon" href="${path('assets/webdev-mark.png')}" type="image/png">
   <link rel="stylesheet" href="${path('assets/portal.css')}">
 </head>
 <body>
@@ -80,16 +80,16 @@ export function renderPages(base, sizes) {
 </html>`;
   }
   return new Map([
-    ['', page({ title: 'WebDev', eyebrow: 'Übersicht', intro: 'Hier zeige ich Webseiten, die ich erstellt habe, und stelle meine Apps zum Download bereit.',
+    ['', page({ title: 'WebDev', eyebrow: 'Übersicht', intro: 'Webseiten als Vorschau und Apps zum Download.',
       content: group('Bereiche', '', [
         { route: routes.reta, label: 'Webseiten', description: 'Vorschauen und frühere Versionen ansehen', mark: badge('web'), meta: 'Reta' },
         { route: routes.apps, label: 'Apps', description: 'Apps für dein Gerät herunterladen', mark: badge('apps', 'sage') },
       ]) })],
-    [routes.reta, page({ title: 'Reta', area: 'reta', eyebrow: 'Webseiten', intro: 'Hier kannst du dir die Webseiten ansehen, die ich unter Reta erstellt habe. Sind mehrere Fassungen verfügbar, kannst du sie einzeln öffnen.', parent: ['', 'Übersicht'],
+    [routes.reta, page({ title: 'Reta', area: 'reta', eyebrow: 'Webseiten', intro: 'Webseiten von Reta als Vorschau. Frühere Fassungen sind bei der jeweiligen Website zu finden.', parent: ['', 'Übersicht'],
       content: group('Webseiten', '', projects) })],
-    [routes.imhof, page({ title: 'Friseur Imhof', area: 'reta', eyebrow: 'Reta · Webseiten', intro: 'Wähle die aktuelle Website oder eine frühere Fassung.', mark: asset('imhof.svg', 'project-mark'), parent: [routes.reta, 'Webseiten'],
+    [routes.imhof, page({ title: 'Friseur Imhof', area: 'reta', eyebrow: 'Reta · Webseiten', intro: 'Wähle die aktuelle Website oder eine frühere Fassung.', mark: asset('imhof-logo.png', 'project-mark', routes.current + 'assets/'), parent: [routes.reta, 'Webseiten'],
       content: group('Versionen', 'Neueste zuerst', versions) })],
-    [routes.apps, page({ title: 'Apps', area: 'apps', eyebrow: 'WebDev', intro: 'Hier findest du meine Apps und ihre Installationsdateien.', parent: ['', 'Übersicht'],
+    [routes.apps, page({ title: 'Apps', area: 'apps', eyebrow: 'WebDev', intro: 'Apps und Installationsdateien für dein Gerät.', parent: ['', 'Übersicht'],
       content: group('Verfügbare Apps', '', apps) })],
     [routes.sequvia, page({ title: 'Sequvia', area: 'apps', eyebrow: 'Apps · Downloads', intro: 'Wähle die passende ZIP-Datei für dein Gerät.', parent: [routes.apps, 'Apps'],
       content: group('Downloads', 'Android &amp; iOS', downloads) + `<section class="help"><h2>Nach dem Download</h2>
