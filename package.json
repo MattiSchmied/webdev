@@ -1,13 +1,11 @@
 {
-  "name": "reta-website-collection",
-  "version": "2.4.0",
+  "name": "webdev",
+  "version": "2.5.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=24.0.0"
-  },
+  "engines": { "node": ">=24" },
   "scripts": {
-    "build": "node showcase/src/build.ts"
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs"
   }
 }
-

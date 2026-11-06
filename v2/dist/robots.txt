@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /webdev/
-Disallow: /webdev/research/
-Disallow: /webdev/src/
-Disallow: /webdev/checks/
-Sitemap: https://mattischmied.github.io/webdev/sitemap.xml

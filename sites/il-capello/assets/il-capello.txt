@@ -1,0 +1,7 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Il Capello
+TEL:089 611 62 60
+EMAIL:info@ilcapello-unterhaching.de
+ADR:;;Hauptstraße 81;Unterhaching;;82008;DE
+END:VCARD

@@ -1,17 +1,32 @@
-# WebDev · Webseiten & Apps v2.4.0
+# WebDev
 
-Das Portal bündelt zwei Bereiche: **Webseiten → Reta → Friseur Imhof → Versionen** und **Apps → Sequvia → Downloads**. Die aktuelle Imhof-Fassung (v2) steht vor dem Archiv (v1). Die frühere Fassung stammt aus `v1/outputs/Imhof`; ein nicht im Repository vorhandenes Bild wird in der generierten Vorschau durch das vorhandene Porträt ersetzt. Die Quelldateien bleiben unverändert.
+[Website öffnen](https://mattischmied.github.io/webdev/) · [Reta-Webseiten](https://mattischmied.github.io/webdev/reta/) · [Sequvia herunterladen](https://mattischmied.github.io/webdev/apps/sequvia/)
 
-Die Sequvia-Seite kennzeichnet Android (APK als ZIP) und iOS (IPA als ZIP) als noch nicht verfügbar. Sobald die Dateien vorliegen, müssen sie eingebunden und die Hinweise durch funktionierende Download-Links ersetzt werden.
+WebDev ist der Einstieg zu den Salon-Websites von Reta und zu den Installationsdateien von Sequvia.
 
-## Build
+| Ordner | Inhalt |
+| --- | --- |
+| `portal/` | Startseite, Projektübersicht, Versionsauswahl und Downloadseite. |
+| `sites/imhof/current/` | Quellen der aktuellen Imhof-Fassung mit Vorlagen, Bildern, Original-PDFs und Recherche. |
+| `sites/imhof/archive/` | Statische erste Imhof-Fassung. |
+| `sites/il-capello/` | Statischer Desktop-Export vom 5. November 2026, einschließlich Leistungen, Team, Kontakt und Rechtstexten. |
+| `apps/sequvia/downloads/` | Die beiden ausgelieferten ZIP-Dateien für Android und iOS. |
+| `scripts/` | Baut und prüft die Website; stellt eine lokale Vorschau bereit. |
 
-Node.js 24 ist erforderlich; zusätzliche Abhängigkeiten sind nicht nötig:
+## Lokal öffnen
+
+Mit Node.js 24, ohne zusätzliche Abhängigkeiten:
 
 ```sh
-node showcase/src/build.ts
+npm run build
+npm run preview
 ```
 
-Der Build schreibt nach `showcase/dist/`, baut und prüft die aktuelle Imhof-Fassung, kopiert die archivierte Fassung und prüft lokale Links. Mit `SITE_URL` kann die HTTPS-Basisadresse einschließlich Pfadpräfix angepasst werden. Der bestehende GitHub-Pages-Workflow veröffentlicht das Ergebnis nach einem Push auf `main`. Das Portal ist mit `noindex,nofollow` und einer sperrenden robots.txt versehen.
+Die Vorschau gibt ihre URL im Terminal aus. `SITE_URL` legt bei Bedarf eine abweichende HTTPS-Basisadresse fest und muss für Build und Vorschau gleich gesetzt sein. Nur `dist/` wird veröffentlicht. Der GitHub-Pages-Workflow baut bei Pushes auf `main` und prüft lokale Verweise sowie die aktuellen Imhof-Preise und Original-PDFs.
 
-`v1/` und `v2/` enthalten die ursprünglichen Fassungen. Der Build verändert sie nicht. Bestehende Imhof-Unterseiten-URLs werden auf die aktuelle Version weitergeleitet.
+## Inhalte pflegen
+
+- Navigation und Einträge stehen in `portal/pages.mjs`, Gestaltung und Logos in `portal/assets/`.
+- Die beiden Sequvia-ZIPs liegen im selben Projekt wie ihre Downloadseite. Neue Dateien an derselben Stelle ersetzen; die angezeigte Dateigröße wird beim Build ermittelt. Eine IPA im ZIP bedeutet keine Direktinstallation unter iOS.
+- Die Imhof-Versionsleiste ist in beiden Fassungen über `portal/assets/navigation.css` ausgeblendet. Für die aktuelle Imhof-Fassung werden die HTML-Dateien aus den Vorlagen gebaut. In der Archivfassung ersetzt der Build ein fehlendes Bild durch das mitgelieferte Porträt.
+- Frühere ungenutzte Entwürfe und doppelte Build-Ausgaben bleiben in der Git-Historie auffindbar.

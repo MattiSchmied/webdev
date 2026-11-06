@@ -25,14 +25,14 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Build and check four website previews
+      - name: Build and check WebDev
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
-        run: node showcase/src/build.ts
+        run: npm run build
       - name: Upload public website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: showcase/dist
+          path: dist
 
   deploy:
     needs: build
