@@ -32,7 +32,7 @@ export function renderPages(base, sizes) {
   const group = (label, hint, rows) => `<section class="group"><div class="group-heading"><h2>${label}</h2>${hint ? `<span>${hint}</span>` : ''}</div><ul class="rows">${rows.map(row).join('')}</ul></section>`;
   const appRows = apps.map(app => ({
     route: appRoute(app), label: app.name, description: app.description,
-    mark: asset(app.icon, 'tile app-logo'),
+    mark: asset(app.icon, 'tile app-logo app-icon'),
   }));
   const versions = [
     { route: routes.current, label: 'Version 2', description: 'Aktuelle Website mit Leistungen, Preisen und Kontakt', mark: badge('web'), meta: 'Aktuell', action: 'open' },
@@ -95,7 +95,7 @@ export function renderPages(base, sizes) {
     }
     return [route, page({
       title: app.name, area: 'apps', eyebrow: 'Apps · Downloads', intro: app.description,
-      mark: asset(app.icon, 'project-mark'), parent: [routes.apps, 'Apps'],
+      mark: asset(app.icon, 'project-mark app-brand-mark'), parent: [routes.apps, 'Apps'],
       content: group('Downloads', '', rows) + '<section class="help"><h2>Nach dem Download</h2>' + instructions.join('') + '</section>',
     })];
   });

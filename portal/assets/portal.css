@@ -71,6 +71,7 @@ h1 { margin: 0; font-weight: 800; letter-spacing: -.068em; font-size: clamp(3rem
 .tile.sage { color: #245b4e; background: #e1efe9; }
 .tile.neutral { color: #334d69; background: #e8edf4; }
 .tile.app-logo { object-fit: contain; }
+.tile.app-icon, .app-brand-mark { border-radius: 14px; }
 .row-text { display: grid; gap: 4px; }
 .row-text strong { font-size: 1.13rem; font-weight: 800; letter-spacing: -.028em; }
 .row-text > span { color: var(--muted); font-size: .875rem; line-height: 1.45; }
