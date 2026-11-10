@@ -21,7 +21,7 @@ export function renderPages(base, sizes) {
   const path = route => escape(base + route);
   const asset = (file, cls = '', prefix = 'assets/') => `<img class="${cls}" src="${path(prefix + file)}" alt="" width="48" height="48">`;
   const badge = (symbol, tone = 'blue') => `<span class="tile ${tone}">${icon(symbol)}</span>`;
-  const brand = `<a class="brand" href="${path('')}" aria-label="WebDev Startseite">${asset('webdev-mark.png')}<span>WebDev</span></a>`;
+  const brand = `<a class="brand" href="${path('')}" aria-label="WebDev Startseite">${asset('webdev-mark.svg')}<span>WebDev</span></a>`;
   function row({ route, label, description, mark, meta, action = 'next', download }) {
     const href = route.startsWith('https://') ? escape(route) : path(route);
     return `<li><a class="row" href="${href}"${download && !route.startsWith('https://') ? ` download="${escape(download)}"` : ''}>
@@ -48,10 +48,10 @@ export function renderPages(base, sizes) {
 <html lang="de">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f1f6fa">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f3f7fa">
   <meta name="description" content="${escape(intro)}">
   <title>${title === 'WebDev' ? 'WebDev · Webseiten und Apps' : escape(title) + ' · WebDev'}</title>
-  <link rel="icon" href="${path('assets/webdev-mark.png')}" type="image/png">
+  <link rel="icon" href="${path('assets/webdev-mark.svg')}" type="image/svg+xml">
   <link rel="stylesheet" href="${path('assets/portal.css')}">
 </head>
 <body>

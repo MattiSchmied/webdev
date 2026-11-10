@@ -8,13 +8,13 @@
 
 :root {
   color-scheme: light;
-  --paper: #f1f6fa;
+  --paper: #f3f7fa;
   --surface: #fff;
-  --ink: #172c3d;
-  --muted: #495f70;
-  --line: #dbe5ed;
-  --blue: #245b84;
-  --blue-soft: #e5f0f8;
+  --ink: #17334b;
+  --muted: #4e6475;
+  --line: #dce7ee;
+  --blue: #256592;
+  --blue-soft: #e7f1f7;
   --radius: 25px;
   font-family: Manrope, system-ui, sans-serif;
 }
@@ -31,7 +31,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
   border: 1px solid var(--line); border-radius: 99px; padding: 8px 12px 8px 15px;
   background: var(--surface);
-  box-shadow: 0 4px 20px #172c3d08;
+  box-shadow: 0 4px 20px #17334b08;
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 20px; font-weight: 800; letter-spacing: -.055em; }
 .brand img { width: 37px; height: 37px; }
@@ -71,19 +71,19 @@ h1 { margin: 0; font-weight: 800; letter-spacing: -.068em; font-size: clamp(3rem
 .row:hover { background: #f5f9fc; }
 .row:focus-visible { z-index: 1; outline-offset: -3px; }
 .tile { width: 48px; height: 48px; display: grid; place-items: center; color: var(--blue); background: var(--blue-soft); border-radius: 14px; }
-.tile.sage { color: #245b4e; background: #e1efe9; }
-.tile.neutral { color: #334d69; background: #e8edf4; }
+.tile.sage { color: #256592; background: #e7f1f7; }
+.tile.neutral { color: #34556d; background: #eaf1f5; }
 .tile.app-logo { object-fit: contain; }
 .tile.app-icon, .app-brand-mark { border-radius: 14px; }
 .row-text { display: grid; gap: 4px; }
 .row-text strong { font-size: 1.13rem; font-weight: 800; letter-spacing: -.028em; }
 .row-text > span { color: var(--muted); font-size: .875rem; line-height: 1.45; }
-.row-meta { border-radius: 99px; padding: 5px 10px; background: #edf4f9; font-size: .75rem; font-weight: 800; color: var(--blue); white-space: nowrap; }
+.row-meta { border-radius: 99px; padding: 5px 10px; background: #eef5f9; font-size: .75rem; font-weight: 800; color: var(--blue); white-space: nowrap; }
 .row-action { grid-column: 4; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--blue); background: var(--blue-soft); transition: background-color .16s, color .16s; }
 .row-action svg { width: 17px; }
 .row:hover .row-action { background: var(--blue); color: white; }
 .row[download] .row-action { background: var(--blue); color: white; }
-.row[download]:hover .row-action { background: #183d5b; }
+.row[download]:hover .row-action { background: #194a6e; }
 .help { margin-top: 30px; color: var(--muted); }
 .help h2 { font-size: 1rem; margin: 0 0 8px; color: var(--ink); }
 details { border-bottom: 1px solid var(--line); }
