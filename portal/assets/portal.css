@@ -51,6 +51,9 @@ main { flex: 1; padding-block: 42px 80px; }
 }
 h1 { margin: 0; font-weight: 800; letter-spacing: -.068em; font-size: clamp(3rem, 8vw, 6.25rem); line-height: 1.01; overflow-wrap: anywhere; }
 .lead { max-width: 46ch; font-size: clamp(1rem, 1.7vw, 1.22rem); line-height: 1.65; color: var(--muted); margin: 16px 0 0; }
+.app-release { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 22px 0 0; }
+.app-release dt { color: var(--muted); font-size: .78rem; }
+.app-release dd { margin: 3px 0 0; font-weight: 750; }
 .index-top svg { width: 19px; }
 .index-branch span { margin-left: 9px; font-size: .74rem; color: var(--muted); }
 .group-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 0 4px 11px; }

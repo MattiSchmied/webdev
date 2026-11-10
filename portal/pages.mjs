@@ -33,6 +33,7 @@ export function renderPages(base, sizes) {
   const appRows = apps.map(app => ({
     route: appRoute(app), label: app.name, description: app.description,
     mark: asset(app.icon, 'tile app-logo app-icon'),
+    meta: 'Version ' + app.release.version,
   }));
   const versions = [
     { route: routes.current, label: 'Version 2', description: 'Aktuelle Website mit Leistungen, Preisen und Kontakt', mark: badge('web'), meta: 'Aktuell', action: 'open' },
@@ -42,7 +43,7 @@ export function renderPages(base, sizes) {
     { route: routes.imhof, label: 'Friseur Imhof', description: 'Website und frühere Fassungen', mark: asset('imhof-logo.png', 'tile app-logo', routes.current + 'assets/'), meta: versions.length === 1 ? '1 Version' : versions.length + ' Versionen' },
     { route: routes.capello, label: 'Il Capello', description: 'Salon, Team, Leistungen und Kontakt', mark: asset('icon.svg', 'tile app-logo', routes.capello + 'assets/'), action: 'open' },
   ];
-  function page({ title, area, eyebrow, intro, content, parent, mark = '' }) {
+  function page({ title, area, eyebrow, intro, content, parent, mark = '', release = '' }) {
     return `<!doctype html>
 <html lang="de">
 <head>
@@ -67,6 +68,7 @@ export function renderPages(base, sizes) {
       <p class="eyebrow">${eyebrow}</p>
       <div class="intro-heading">${mark}<h1>${escape(title)}</h1></div>
       <p class="lead">${escape(intro)}</p>
+      ${release}
     </div>
     ${content}
   </main>
@@ -75,6 +77,7 @@ export function renderPages(base, sizes) {
 </html>`;
   }
   const megabytes = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
+  const releaseDate = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long', timeZone: 'UTC' });
   const appPages = apps.map(app => {
     const route = appRoute(app);
     const rows = app.downloads.map(({ platform, format, file, symbol }) => {
@@ -96,6 +99,10 @@ export function renderPages(base, sizes) {
     return [route, page({
       title: app.name, area: 'apps', eyebrow: 'Apps · Downloads', intro: app.description,
       mark: asset(app.icon, 'project-mark app-brand-mark'), parent: [routes.apps, 'Apps'],
+      release: `<dl class="app-release">
+        <div><dt>Aktuelle Version</dt><dd>${escape(app.release.version)}</dd></div>
+        <div><dt>Letztes App-Update</dt><dd><time datetime="${escape(app.release.updated)}">${releaseDate.format(new Date(app.release.updated))}</time></dd></div>
+      </dl>`,
       content: group('Downloads', '', rows) + '<section class="help"><h2>Nach dem Download</h2>' + instructions.join('') + '</section>',
     })];
   });

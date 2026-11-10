@@ -5,6 +5,7 @@ export const apps = [
   {
     slug: 'sequvia',
     name: 'Sequvia',
+    release: { version: '1.0.0', updated: '2026-11-06' },
     description: 'Ein Stadtspiel in München, bei dem zwei Teams gegeneinander antreten und Missionen lösen.',
     icon: 'sequvia.svg',
     downloads: [
@@ -15,6 +16,7 @@ export const apps = [
   {
     slug: 'notin',
     name: 'Notin',
+    release: { version: '1.4.0', updated: '2026-11-10' },
     description: 'Schulnoten, Durchschnitte und Stundenplan im Blick. Mit eigenen Berechnungsprofilen für die bayerische Oberstufe und Abiturplanung.',
     icon: 'notin.png',
     downloads: [android('Notin_apk.zip'), ios('Notin_ipa.zip')],
@@ -22,6 +24,7 @@ export const apps = [
   {
     slug: 'negotia',
     name: 'Negotia',
+    release: { version: '1.30.1', updated: '2026-11-07' },
     description: 'To-do-App für Aufgabenlisten, Unteraufgaben und Fälligkeiten, mit Erinnerungen und optionaler Synchronisierung.',
     icon: 'negotia.png',
     downloads: [android('Negotia_apk.zip'), ios('Negotia_ipa.zip')],
