@@ -80,10 +80,10 @@ export function renderPages(base, sizes) {
   const releaseDate = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long', timeZone: 'UTC' });
   const appPages = apps.map(app => {
     const route = appRoute(app);
-    const rows = app.downloads.map(({ platform, format, file, symbol }) => {
+    const rows = app.downloads.map(({ platform, format, file, symbol, previous }) => {
       const downloadRoute = route + 'downloads/' + file;
       return {
-        route: downloadUrl(downloadRoute), label: platform, description: format + ' als ZIP herunterladen',
+        route: downloadUrl(downloadRoute), label: platform, description: format + ' als ZIP herunterladen' + (previous ? ' · ältere Version' : ''),
         mark: badge(symbol, format === 'APK' ? 'blue' : 'neutral'),
         meta: megabytes.format(sizes.get(downloadRoute) / 1e6) + ' MB',
         action: 'download', download: file,
