@@ -21,7 +21,7 @@
 <p class="sr-only" id="status" aria-live="polite"></p>
 <noscript>Bitte aktiviere JavaScript, um den Elefanten zu sehen.</noscript>
 <script type="module">
-import('./scene.js').catch(error => {
+import('./scene.js?v=2').catch(error => {
   console.error(error);
   document.querySelector('#loading').hidden = true;
   document.querySelector('#error').hidden = false;
