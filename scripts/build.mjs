@@ -67,7 +67,8 @@ for (const route of [routes.current, routes.archive]) {
 
 copy(resolve(repo, 'sites/il-capello'), routes.capello);
 // Standalone, intentionally unlisted scene; preserve the case of its public URL.
-copy(resolve(repo, 'sites/elefant'), 'Elefant');
+copy(resolve(repo, 'sites/elefant'), 'Eli');
+write('Elefant/index.html', `<!doctype html><html lang="de"><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url=${base}Eli/"><title>Eli</title><a href="${base}Eli/">Weiter zu Eli</a></html>`);
 copy(resolve(repo, 'portal/assets'), 'assets');
 for (const font of ['manrope-variable.ttf', 'OFL.txt']) {
   const target = 'assets/fonts/' + font;

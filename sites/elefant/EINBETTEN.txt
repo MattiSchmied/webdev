@@ -1,0 +1,46 @@
+ELI – TECHNIK UND EINBETTUNG
+
+Die Szene besteht aus statischem HTML, CSS und JavaScript. Three.js ist lokal
+im Ordner vendor enthalten; ein Serverprogramm und externe Dienste sind nicht
+nötig. Die Szene funktioniert daher auch auf kostenlosem GitHub Pages.
+
+Der Elefant ist ein eigenes animiertes 3D-Modell nach der Fotovorlage. Sein
+kurzer Plüsch besteht aus zwölf versetzten, gemeinsam gezeichneten Schichten
+mit gekrümmten Faserquerschnitten. Licht und Schatten wirken auf diese Fasern.
+Kopf, Ohren, Augen und Gliedmaßen werden über eine Zeitachse bewegt. Der Rüssel
+ist ein kontinuierlich verformtes Netz entlang einer geglätteten Kurve.
+
+Der Wasserstrahl kombiniert dünne bewegte Wasserfäden mit einzelnen Partikeln.
+Die Tropfen auf der Scheibe werden separat als gekrümmte Oberflächen gezeichnet.
+Aus ihren Oberflächennormalen entstehen örtliche Bildverzerrungen nach einer
+vereinfachten Lichtbrechung, Fresnel-Reflexe und Glanzlichter. Größere Tropfen
+laufen nach unten. Das ist eine Echtzeit-Näherung, keine vollständige optische
+Simulation oder vorberechnete Filmaufnahme.
+
+ABLAUF
+Hereinlaufen, Wasser aufnehmen, spritzen, kichern und zwinkern. Nach einigen
+Sekunden Pause winkt Eli zum Abschied und läuft nach rechts aus dem Bild.
+Die Tropfen bleiben sichtbar. Neustart und Scheibe trocknen sind jederzeit möglich.
+Bei aktivierter Systemoption für reduzierte Bewegung startet die Szene pausiert.
+
+AUF EINER ANDEREN SEITE EINBETTEN
+
+<iframe
+  src="https://mattischmied.github.io/webdev/Eli/"
+  title="Eli, der Plüschelefant"
+  style="display:block;width:100%;height:100vh;border:0">
+</iframe>
+
+Der Wassereffekt füllt den iframe. Soll er die komplette sichtbare Seite
+bedecken, muss auch der iframe die gesamte sichtbare Fläche ausfüllen.
+
+SELBST HOSTEN
+Den kompletten Ordner sites/elefant aus dem Repository kopieren, inklusive
+vendor und dessen Lizenzdatei. Den Ordner beispielsweise als Eli auf dem
+eigenen Webserver ablegen und Eli/index.html über HTTPS aufrufen. Alle Dateien
+verwenden relative Pfade. Zum alleinigen Bereitstellen dieses Ordners sind
+kein Paketmanager und kein Build erforderlich. Direktes Öffnen über file://
+unterstützt die verwendeten JavaScript-Module je nach Browser nicht.
+
+Öffentliche Adresse: https://mattischmied.github.io/webdev/Eli/
+Die bisherige Adresse /webdev/Elefant/ leitet auf diese Adresse weiter.
